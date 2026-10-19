@@ -180,6 +180,114 @@ code{font-family:'Libre Baskerville',Georgia,serif;font-style:normal;}
 .theme-check .icon{background:var(--pastel-mint);}
 .theme-check .section-label{background:var(--pastel-mint);color:var(--green-ink);}
 
+
+/* ═══════════════════ RESEARCH PROCESS ═══════════════════ */
+.theme-proc .icon{background:var(--pastel-teal);}
+.theme-proc .section-label{background:var(--pastel-teal);color:var(--teal-ink);}
+.proc-flow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;}
+.proc-chip{flex:1 1 130px;text-align:center;background:var(--pastel-teal);color:var(--teal-ink);
+  border-radius:50px;padding:7px 10px;font-size:.74rem;font-weight:700;border:1.5px solid #b5e3dd;}
+.proc-step{display:flex;gap:16px;margin:0 0 26px;position:relative;}
+.proc-step:not(:last-child)::after{content:'';position:absolute;left:19px;top:46px;bottom:-22px;width:2px;background:var(--gray200);}
+.proc-num{width:40px;height:40px;border-radius:50%;background:var(--indigo);color:#fff;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.proc-main{flex:1;min-width:0;}
+.proc-main h3{font-size:1rem;color:var(--navy);margin-bottom:4px;}
+.proc-main p{font-size:.88rem;}
+.funnel{margin:14px 0;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.funnel div{border-radius:10px;padding:9px 14px;text-align:center;font-size:.82rem;color:var(--navy);}
+.funnel small{display:block;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--gray600);}
+.disc-chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.disc-chips span{background:var(--pastel-amber);color:var(--amber-ink);border-radius:50px;padding:5px 13px;font-size:.78rem;font-weight:700;}
+.src-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.src-card{border-radius:12px;padding:16px 18px;font-size:.84rem;line-height:1.65;}
+.src-card.acad{background:var(--pastel-blue);border:1.5px solid #b8d4f0;}
+.src-card.non{background:var(--pastel-amber);border:1.5px solid #ecd28a;}
+.src-card h4{font-size:.9rem;margin-bottom:6px;}
+.src-card.acad h4{color:var(--blue-ink);} .src-card.non h4{color:var(--amber-ink);}
+.src-card ul{padding-left:18px;margin:6px 0;}
+.src-card .src-use{margin-top:8px;font-weight:700;}
+.thesis-map{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+.thesis-map div{border-radius:10px;padding:12px 14px;font-size:.8rem;text-align:center;}
+.thesis-map small{display:block;font-size:.68rem;letter-spacing:1.2px;text-transform:uppercase;opacity:.75;margin-bottom:3px;}
+@media(max-width:620px){.src-grid,.thesis-map{grid-template-columns:1fr;}}
+
+
+.src-item{display:flex;gap:10px;align-items:flex-start;margin:9px 0;font-size:.8rem;line-height:1.55;}
+.src-item .si{font-size:20px;flex-shrink:0;line-height:1.3;}
+.src-item b{display:block;font-size:.84rem;}
+.src-item small{display:block;font-size:.74rem;opacity:.9;}
+.src-eg{background:rgba(255,255,255,.7);border-radius:8px;padding:7px 10px;margin-top:5px;font-size:.74rem;}
+.src-eg strong{font-size:.66rem;letter-spacing:1.1px;text-transform:uppercase;display:block;margin-bottom:2px;}
+
+
+/* interactive practice */
+.practice{background:var(--white);border:2px solid var(--gray200);border-radius:16px;padding:18px 20px;margin:18px 0;box-shadow:var(--shadow-sm);}
+.practice h4{color:var(--navy);font-size:.95rem;margin-bottom:4px;}
+.practice .pr-sub{font-size:.78rem;color:var(--gray600);margin-bottom:12px;}
+.pr-head{display:flex;justify-content:space-between;gap:8px;font-size:.74rem;font-weight:700;color:var(--gray600);margin-bottom:8px;flex-wrap:wrap;}
+.pr-prompt{background:var(--pastel-purple);color:var(--purple-ink);border-radius:12px;padding:14px 16px;font-weight:700;font-size:.95rem;margin-bottom:12px;}
+.pr-opts{display:flex;flex-direction:column;gap:8px;}
+.pr-opt{font-family:inherit;text-align:left;border:2px solid var(--gray200);background:var(--off);color:var(--gray800);border-radius:12px;padding:11px 14px;font-size:.85rem;cursor:pointer;transition:all .15s;}
+.pr-opt:hover:not(:disabled){border-color:var(--violet);background:var(--pastel-purple);}
+.pr-opt.right{background:var(--pastel-green);border-color:#5bbb87;color:var(--green-ink);font-weight:700;}
+.pr-opt.wrong{background:var(--pastel-rose);border-color:#d9618e;color:var(--rose-ink);}
+.pr-opt:disabled{cursor:default;}
+.pr-fb{margin-top:12px;border-radius:12px;padding:12px 14px;font-size:.82rem;line-height:1.65;}
+.pr-fb.good{background:var(--pastel-green);color:var(--green-ink);}
+.pr-fb.bad{background:var(--pastel-amber);color:var(--amber-ink);}
+.pr-btn{font-family:inherit;margin-top:12px;border:none;border-radius:50px;padding:9px 20px;font-weight:700;font-size:.82rem;cursor:pointer;background:var(--indigo);color:#fff;}
+.pr-btn:hover{background:var(--navy);}
+.pr-score{text-align:center;padding:10px 0;}
+.pr-score .big{font-size:2rem;font-weight:700;color:var(--navy);}
+.pr-input{width:100%;font-family:inherit;font-size:.88rem;padding:11px 14px;border:2px solid var(--gray200);border-radius:12px;background:var(--off);color:var(--gray800);margin:6px 0;}
+.pr-input:focus{outline:none;border-color:var(--violet);background:var(--white);}
+.pr-select{font-family:inherit;font-size:.86rem;padding:10px 12px;border:2px solid var(--gray200);border-radius:12px;background:var(--off);color:var(--gray800);width:100%;margin:6px 0;}
+.pr-out{margin-top:10px;background:var(--pastel-green);color:var(--green-ink);border-radius:12px;padding:12px 14px;font-weight:700;font-size:.9rem;display:none;}
+.wh-table{width:100%;border-collapse:separate;border-spacing:0 6px;margin:10px 0;font-size:.8rem;}
+.wh-table td{padding:9px 12px;vertical-align:top;}
+.wh-table td:first-child{background:var(--pastel-blue);color:var(--blue-ink);font-weight:700;border-radius:10px 0 0 10px;width:34%;}
+.wh-table td:last-child{background:var(--pastel-purple);color:var(--purple-ink);border-radius:0 10px 10px 0;}
+.yn-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+.yn-compare div{border-radius:12px;padding:12px 14px;font-size:.82rem;}
+.yn-compare .no{background:var(--pastel-rose);color:var(--rose-ink);border:1.5px solid #f0b3cc;}
+.yn-compare .yes{background:var(--pastel-green);color:var(--green-ink);border:1.5px solid #9be0be;}
+@media(max-width:620px){.yn-compare{grid-template-columns:1fr;}}
+
+/* interdisciplinary + narrowing visuals */
+.venn{display:flex;align-items:center;justify-content:center;margin:18px 0 8px;}
+.venn .vc{width:150px;height:150px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:.85rem;padding:14px;}
+.venn .vc span{font-size:26px;margin-bottom:4px;}
+.venn .va{background:var(--pastel-blue);color:var(--blue-ink);border:2px solid #b8d4f0;margin-right:-34px;}
+.venn .vb{background:var(--pastel-rose);color:var(--rose-ink);border:2px solid #f0b3cc;margin-left:-34px;}
+.venn .vm{position:relative;z-index:2;width:88px;height:88px;border-radius:50%;background:var(--pastel-amber);color:var(--amber-ink);border:2px solid #ecd28a;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:.68rem;font-weight:700;line-height:1.3;}
+.venn .vm span{font-size:20px;}
+.rel-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 14px;}
+.rel-chips span{background:var(--pastel-amber);color:var(--amber-ink);border-radius:50px;padding:5px 13px;font-size:.78rem;font-weight:700;border:1.5px solid #ecd28a;}
+.factor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+.factor{border-radius:12px;padding:13px 14px;font-size:.78rem;line-height:1.55;}
+.factor .fi{font-size:24px;display:block;margin-bottom:2px;}
+.factor b{display:block;font-size:.84rem;margin-bottom:2px;}
+.factor small{display:block;opacity:.85;font-size:.72rem;}
+.formula{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:14px 0;font-weight:700;font-size:.8rem;}
+.formula span.fb{border-radius:50px;padding:7px 14px;}
+.formula span.op{color:var(--gray600);font-size:1rem;}
+.ex-card{background:var(--white);border:1.5px solid var(--gray200);border-radius:14px;padding:15px 18px;margin:12px 0;box-shadow:var(--shadow-sm);}
+.ex-card .ex-title{font-weight:700;color:var(--navy);font-size:.92rem;margin-bottom:8px;}
+.ex-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:6px;font-size:.78rem;}
+.ex-row .lbl{font-weight:700;color:var(--gray600);margin-right:4px;}
+.ex-row .tag{border-radius:50px;padding:3px 11px;font-weight:700;font-size:.75rem;}
+.t-area{background:var(--pastel-blue);color:var(--blue-ink);}
+.t-area2{background:var(--pastel-rose);color:var(--rose-ink);}
+.t-fac{background:var(--pastel-green);color:var(--green-ink);}
+.t-fac2{background:var(--pastel-purple);color:var(--purple-ink);}
+.pair-list{margin:12px 0;display:flex;flex-direction:column;gap:8px;}
+.pair{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--pastel-purple);border-radius:10px;padding:10px 14px;font-size:.82rem;}
+.pair .tag{border-radius:50px;padding:3px 11px;font-weight:700;font-size:.75rem;background:var(--white);color:var(--purple-ink);}
+@media(max-width:620px){.factor-grid{grid-template-columns:1fr 1fr;}.venn .vc{width:120px;height:120px;font-size:.75rem;}}
+
+
 /* ═══════════════════ LAYOUT PANEL ═══════════════════ */
 .layout-panel{
   background:linear-gradient(135deg,var(--navy) 0%,var(--indigo) 100%);
@@ -581,7 +689,8 @@ footer{
 ═══════════════════════════════════ -->
 <nav class="sticky-nav" aria-label="Section navigation">
   <div class="nav-inner">
-    <a class="nav-btn active" href="#layout">📋 Layout</a>
+    <a class="nav-btn active" href="#process">🔍 Research Process</a>
+    <a class="nav-btn" href="#layout">📋 Layout</a>
     <a class="nav-btn" href="#intro">I. Introduction</a>
     <a class="nav-btn" href="#lit">II. Literature Review</a>
     <a class="nav-btn" href="#para-structure">— Para Structure</a>
@@ -597,6 +706,242 @@ footer{
 </nav>
 
 <main class="page">
+
+<!-- ═══════════════════════════════════
+     RESEARCH PROCESS
+═══════════════════════════════════ -->
+<span id="process" class="anchor-target"></span>
+<div class="section-card theme-proc open">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div class="icon">🔍</div>
+    <h2>The Research Process: From Topic to Thesis</h2>
+    <span class="section-label">Before you write</span>
+    <span class="toggle-arrow">▾</span>
+  </div>
+  <div class="card-body">
+
+    <div class="proc-flow">
+      <span class="proc-chip">1 · Interdisciplinary areas</span>
+      <span class="proc-chip">2 · Narrow the title</span>
+      <span class="proc-chip">3 · Research question</span>
+      <span class="proc-chip">4 · Find sources</span>
+      <span class="proc-chip">5 · Thesis: 3 focal points</span>
+    </div>
+
+    <div class="proc-step">
+      <div class="proc-num">1</div>
+      <div class="proc-main">
+        <h3>Select an interdisciplinary topic</h3>
+        <p>An interdisciplinary topic <strong>combines two research areas</strong> into one topic. The two areas must have a <strong>relationship</strong>, so one area helps explain, affect or solve something in the other. They are not studied separately side by side.</p>
+        <svg class="venn-svg" viewBox="0 0 460 290" role="img" aria-label="Venn diagram: Research Area 1 and Research Area 2 overlap in a shared relationship" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:16px auto 6px;font-family:inherit">
+  <defs><clipPath id="clipA"><circle cx="165" cy="145" r="115"/></clipPath></defs>
+  <circle cx="165" cy="145" r="115" fill="#dce8f8" stroke="#5c6fb1" stroke-width="2.5"/>
+  <circle cx="295" cy="145" r="115" fill="#fce8f0" stroke="#c870a0" stroke-width="2.5"/>
+  <circle cx="295" cy="145" r="115" fill="#fdf3dc" stroke="#e8b84b" stroke-width="2.5" clip-path="url(#clipA)"/>
+  <!-- number badges -->
+  <circle cx="115" cy="62" r="21" fill="#2a5490"/><text x="115" y="70" text-anchor="middle" font-size="24" font-weight="700" fill="#fff">1</text>
+  <circle cx="345" cy="62" r="21" fill="#8c1f4f"/><text x="345" y="70" text-anchor="middle" font-size="24" font-weight="700" fill="#fff">2</text>
+  <!-- area 1 -->
+  <text x="115" y="132" text-anchor="middle" font-size="30">⚙️</text>
+  <text x="115" y="162" text-anchor="middle" font-size="15" font-weight="700" fill="#2a5490">Research</text>
+  <text x="115" y="180" text-anchor="middle" font-size="15" font-weight="700" fill="#2a5490">Area 1</text>
+  <text x="115" y="202" text-anchor="middle" font-size="12" fill="#2a5490">e.g. Fashion</text>
+  <!-- area 2 -->
+  <text x="345" y="132" text-anchor="middle" font-size="30">🌱</text>
+  <text x="345" y="162" text-anchor="middle" font-size="15" font-weight="700" fill="#8c1f4f">Research</text>
+  <text x="345" y="180" text-anchor="middle" font-size="15" font-weight="700" fill="#8c1f4f">Area 2</text>
+  <text x="345" y="202" text-anchor="middle" font-size="12" fill="#8c1f4f">e.g. Environment</text>
+  <!-- overlap -->
+  <text x="230" y="122" text-anchor="middle" font-size="28">🔗</text>
+  <text x="230" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#7a5200">Relationship</text>
+  <text x="230" y="170" text-anchor="middle" font-size="11" fill="#7a5200">1 + 2 meet here</text>
+  <!-- caption -->
+  <text x="230" y="276" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e6b">Area 1 + Area 2 = integrated through a relationship</text>
+</svg>
+        <p style="text-align:center;font-size:.8rem;color:var(--gray600)">Choose a relationship word that links the two areas:</p>
+        <div class="rel-chips"><span>💥 Impact</span><span>🗂️ Types</span><span>🧩 Problem &amp; Solution</span><span>🧗 Challenges</span><span>⚠️ Risks</span></div>
+      </div>
+    </div>
+
+    <div class="proc-step">
+      <div class="proc-num">2</div>
+      <div class="proc-main">
+        <h3>Narrow the title down</h3>
+        <p>Two areas together are still too broad. Narrow your title by using <strong>at least two</strong> of these six factors:</p>
+        <div class="factor-grid">
+          <div class="factor" style="background:var(--pastel-purple);color:var(--purple-ink)"><span class="fi">🎭</span><b>1. Genre / Style</b><small>Fast Fashion · Vegan Diets · Gothic Architecture · Documentary Films</small></div>
+          <div class="factor" style="background:var(--pastel-blue);color:var(--blue-ink)"><span class="fi">🌍</span><b>2. Region</b><small>Egypt · South Africa · Mexico</small></div>
+          <div class="factor" style="background:var(--pastel-green);color:var(--green-ink)"><span class="fi">👥</span><b>3. Population / Age Group</b><small>Millennials · Mexican Citizens · Retirees</small></div>
+          <div class="factor" style="background:var(--pastel-rose);color:var(--rose-ink)"><span class="fi">🚻</span><b>4. Gender</b><small>Female · Male</small></div>
+          <div class="factor" style="background:var(--pastel-amber);color:var(--amber-ink)"><span class="fi">⏳</span><b>5. Time / Era</b><small>COVID-19 · Cold War · WWII · 21st Century</small></div>
+          <div class="factor" style="background:var(--pastel-teal);color:var(--teal-ink)"><span class="fi">🔎</span><b>6. Viewpoint / Aspect</b><small>Positive · Negative · Psychological · Physical · Social · Mental</small></div>
+        </div>
+        <div class="formula">
+          <span class="fb" style="background:var(--pastel-blue);color:var(--blue-ink)">📚 Area 1</span><span class="op">+</span>
+          <span class="fb" style="background:var(--pastel-rose);color:var(--rose-ink)">🔬 Area 2</span><span class="op">+</span>
+          <span class="fb" style="background:var(--pastel-amber);color:var(--amber-ink)">🔗 Relationship</span><span class="op">+</span>
+          <span class="fb" style="background:var(--pastel-green);color:var(--green-ink)">🎯 2+ factors</span><span class="op">=</span>
+          <span class="fb" style="background:var(--pastel-purple);color:var(--purple-ink)">✅ Narrowed title</span>
+        </div>
+
+        <div class="info-box tip"><span class="ib-icon">🔑</span><div><p><strong>The keyword is RESEARCHABLE.</strong> This is a <strong>report</strong>: you report what published sources say. Your title must be <strong>balanced</strong>: not too broad and not too narrow. If you cannot find sources on it, it is too narrow. If you find too many unrelated sources, it is too broad.</p></div></div>
+        <div class="pair-list">
+          <div class="pair" style="background:var(--pastel-rose);color:var(--rose-ink)"><span class="tag" style="color:var(--rose-ink)">📢 Too broad</span>Fast Fashion</div>
+          <div class="pair" style="background:var(--pastel-green);color:var(--green-ink)"><span class="tag" style="color:var(--green-ink)">✅ Balanced</span>The Environmental Impact of Fast Fashion</div>
+          <div class="pair" style="background:var(--pastel-amber);color:var(--amber-ink)"><span class="tag" style="color:var(--amber-ink)">🔬 Too narrow</span>The Water Use of One Fast Fashion Brand in a Single Factory in 2023</div>
+        </div>
+        <div class="info-box teal"><span class="ib-icon">🧪</span><div><p><strong>Researchable test:</strong> Before you choose a title, search for it. Can you find <strong>several academic sources</strong> (journal articles, books) AND <strong>non-academic sources</strong> (reports, news, official websites) that cover <strong>both</strong> of your research areas together? If yes, it is researchable.</p></div></div>
+        <h4 style="color:var(--navy);margin:18px 0 4px">🤓 Examples of narrowed-down titles</h4>
+        <div class="ex-card">
+          <div class="ex-title">The Environmental Impact of Fast Fashion</div>
+          <div class="ex-row"><span class="lbl">📝 Research areas:</span><span class="tag t-area">👗 Fashion</span> + <span class="tag t-area2">🌱 Environmental Science</span></div>
+          <div class="ex-row"><span class="lbl">🔗 Factors:</span><span class="tag t-fac">🎭 genre / style</span> + <span class="tag t-fac2">🔎 viewpoint / aspect</span></div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-title">The Benefits of Bilingual Education for Primary School Children</div>
+          <div class="ex-row"><span class="lbl">📝 Research areas:</span><span class="tag t-area">🎓 Education</span> + <span class="tag t-area2">🗣️ Linguistics</span></div>
+          <div class="ex-row"><span class="lbl">🔗 Factors:</span><span class="tag t-fac">👥 population / age group</span> + <span class="tag t-fac2">🔎 viewpoint / aspect</span></div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-title">The Economic Impact of Heritage Tourism in Peru</div>
+          <div class="ex-row"><span class="lbl">📝 Research areas:</span><span class="tag t-area">🧳 Tourism</span> + <span class="tag t-area2">💰 Economics</span></div>
+          <div class="ex-row"><span class="lbl">🔗 Factors:</span><span class="tag t-fac">🎭 genre / style</span> + <span class="tag t-fac2">🌍 region</span></div>
+        </div>
+
+        <h4 style="color:var(--navy);margin:18px 0 4px">✨ More area pairs → titles</h4>
+        <div class="pair-list">
+          <div class="pair"><span class="tag">🥗 Nutrition + 🤝 Sociology</span>The Social Challenges of Adopting a Vegan Diet Among Young Adults</div>
+          <div class="pair"><span class="tag">📜 History + 📖 Literature</span>The Impact of the Industrial Revolution on Women Writers in Britain</div>
+          <div class="pair"><span class="tag">🚜 Agriculture + 🩺 Public Health</span>The Health Risks of Pesticide Use Among Farmers in India</div>
+          <div class="pair"><span class="tag">⚖️ Law + 💰 Economics</span>The Legal Challenges of the Gig Economy in the European Union</div>
+        </div>
+
+        <div class="info-box warn"><span class="ib-icon">⚠️</span><div><p><strong>Check your title:</strong> Does it name <strong>two research areas</strong> with a clear <strong>relationship</strong>? Does it include <strong>at least two narrowing factors</strong>? If not, it is still too broad.</p></div></div>
+        <div class="practice">
+          <h4>🎯 Practice: Is this title too broad, balanced, or too narrow?</h4>
+          <p class="pr-sub">Read each title and choose. Remember: two research areas + a relationship + at least two factors + <strong>researchable</strong>.</p>
+          <div id="quiz-title"></div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="proc-step">
+      <div class="proc-num">3</div>
+      <div class="proc-main">
+        <h3>Formulate the research question</h3>
+        <p>Turn your narrowed topic into <strong>one clear, open question</strong> that cannot be answered with yes or no and that your sources can answer.</p>
+        <div class="model-block">
+          <div class="mb-label">📌 Model</div>
+          <p><strong>Research question:</strong> What is the environmental impact of fast fashion?</p>
+        </div>
+        <div class="info-box note"><span class="ib-icon">📝</span><div><p>Your research question comes from your narrowed title. <strong>A good question is:</strong> focused (one issue) · researchable (evidence exists) · open (not yes/no) · neutral (does not already contain the answer).</p></div></div>
+        <div class="yn-compare">
+          <div class="no"><strong>❌ Yes / No question</strong><br>Is fast fashion bad for the environment?<br><small>A yes/no answer cannot be a report. You only need one word to answer.</small></div>
+          <div class="yes"><strong>✅ Wh- question</strong><br>What is the environmental impact of fast fashion?<br><small>Your sources give the answer, and you report it in three focal points.</small></div>
+        </div>
+        <div class="info-box tip"><span class="ib-icon">🧩</span><div><p><strong>Add a wh- word</strong> at the start of the question: <strong>What · How · Why · To what extent · In what ways</strong>. Never start with <strong>Is · Are · Do · Does · Can · Should</strong>.</p></div></div>
+        <table class="wh-table">
+          <tr><td>💥 What is the impact of…?</td><td>for <strong>Impact</strong>. Example: What is the impact of heritage tourism on the economy of Peru?</td></tr>
+          <tr><td>🌟 What are the benefits of…?</td><td>for <strong>Benefits</strong>. Example: What are the benefits of bilingual education for primary school children?</td></tr>
+          <tr><td>⚠️ What are the risks of…?</td><td>for <strong>Risks</strong>. Example: What are the health risks of pesticide use among farmers in India?</td></tr>
+          <tr><td>🧗 What are the challenges of…?</td><td>for <strong>Challenges</strong>. Example: What are the legal challenges of the gig economy in the European Union?</td></tr>
+          <tr><td>🗂️ What are the types of…?</td><td>for <strong>Types</strong>.</td></tr>
+          <tr><td>🔧 How does…affect…? / How can…be solved?</td><td>for <strong>Problem &amp; Solution</strong> or a process.</td></tr>
+          <tr><td>🎚️ To what extent…?</td><td>when you want to discuss the <strong>degree</strong> of an effect.</td></tr>
+        </table>
+
+        <div class="practice">
+          <h4>🔍 Practice: Is it a yes/no question or a good research question?</h4>
+          <p class="pr-sub">Decide quickly. Look at the first word.</p>
+          <div id="quiz-yn"></div>
+        </div>
+
+        <div class="practice">
+          <h4>🎯 Practice: Choose the best research question for the title</h4>
+          <p class="pr-sub">One option is a yes/no question, and one does not match the title.</p>
+          <div id="quiz-rq"></div>
+        </div>
+
+        <div class="practice">
+          <h4>🛠️ Build a research question</h4>
+          <p class="pr-sub">Choose the relationship, then type your topic <strong>without</strong> the relationship word (e.g. "fast fashion on the environment").</p>
+          <select id="rq-rel" class="pr-select">
+            <option value="impact">💥 Impact</option>
+            <option value="benefits">🌟 Benefits</option>
+            <option value="risks">⚠️ Risks</option>
+            <option value="challenges">🧗 Challenges</option>
+            <option value="types">🗂️ Types</option>
+            <option value="ps">🔧 Problem &amp; Solution</option>
+          </select>
+          <input id="rq-topic" class="pr-input" type="text" placeholder="e.g. fast fashion on the environment" />
+          <button class="pr-btn" onclick="buildRQ()">✨ Build my question</button>
+          <div id="rq-out" class="pr-out"></div>
+        </div>
+
+        <div class="practice">
+          <h4>✅ Check your own research question</h4>
+          <p class="pr-sub">Type your question. The checker looks at the first word and the form.</p>
+          <input id="rq-check" class="pr-input" type="text" placeholder="Type your research question here…" />
+          <button class="pr-btn" onclick="checkRQ()">Check it</button>
+          <div id="rq-check-out" class="pr-fb" style="display:none"></div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="proc-step">
+      <div class="proc-num">4</div>
+      <div class="proc-main">
+        <h3>Find sources: academic and non-academic</h3>
+        <p>Use <strong>both</strong> kinds of source. Academic sources give you reliable research evidence; non-academic sources give you current facts, real examples and public information.</p>
+        <div class="src-grid">
+          <div class="src-card acad">
+            <h4>🎓 Academic sources: where to get them</h4>
+            <div class="src-item"><span class="si">🔎</span><div><b>Google Scholar</b><small>scholar.google.com · free search engine for journal articles, books and theses. Search with keywords from both research areas.</small></div></div>
+            <div class="src-item"><span class="si">🇪🇬</span><div><b>Egyptian Knowledge Bank (EKB)</b><small>ekb.eg · free for users in Egypt after registering. Gives full-text access to many international journals, e-books and theses.</small></div></div>
+            <div class="src-item"><span class="si">📚</span><div><b>JSTOR</b><small>jstor.org · journal articles and books, especially strong in humanities and social sciences.</small></div></div>
+            <div class="src-item"><span class="si">🧑‍🔬</span><div><b>ResearchGate</b><small>researchgate.net · researchers upload their own papers. Check the paper was published in a journal.</small></div></div>
+            <div class="src-item"><span class="si">🏛️</span><div><b>Academia.edu</b><small>academia.edu · same idea: papers shared by authors. Check where it was published.</small></div></div>
+            <div class="src-eg"><strong>🧪 Real example for "The Environmental Impact of Fast Fashion"</strong>Niinimäki, K., Peters, G., Dahlbo, H., Perry, P., Rissanen, T., &amp; Gwilt, A. (2020). The environmental price of fast fashion. <em>Nature Reviews Earth &amp; Environment, 1</em>(4). Search the title in Google Scholar or EKB.</div>
+            <p class="src-use">Use for: research findings, data, theories, definitions.</p>
+          </div>
+          <div class="src-card non">
+            <h4>🌐 Non-academic sources: where to get them</h4>
+            <div class="src-item"><span class="si">📰</span><div><b>News articles</b><small>Reliable news websites (e.g. BBC, The Guardian, Reuters, Ahram Online). Good for recent events and statistics.</small></div></div>
+            <div class="src-item"><span class="si">✍️</span><div><b>Blogs</b><small>Expert, organization or NGO blogs. Check who wrote it and what they know about the topic.</small></div></div>
+            <div class="src-item"><span class="si">▶️</span><div><b>YouTube videos</b><small>Documentaries and interviews from trusted channels (news channels, universities, organizations).</small></div></div>
+            <div class="src-item"><span class="si">🎤</span><div><b>TED / TEDx Talks</b><small>ted.com · talks by experts, with transcripts you can read.</small></div></div>
+            <div class="src-item"><span class="si">🏢</span><div><b>Organization websites and reports</b><small>e.g. UN, WHO, World Bank. Good for official data.</small></div></div>
+            <div class="src-eg"><strong>🧪 Real examples for the same title</strong>• TEDx talk: Parker, S. K. (2020). <em>Slowing down fast fashion</em> [Video]. TEDxOhioStateUniversity.<br>• News: <em>Environmental cost of "fast fashion" is not sustainable</em>. ENN (Environmental News Network).</div>
+            <p class="src-use">Use for: recent statistics, real cases, public views.</p>
+          </div>
+        </div>
+        <div class="info-box teal"><span class="ib-icon">🔍</span><div><p><strong>Search tip:</strong> Use keywords from <strong>both research areas</strong> together, for example <strong>"fast fashion" environmental impact</strong>, instead of searching for one area alone. Use the same keywords on Google Scholar, EKB and YouTube to compare what each gives you.</p></div></div>
+        <div class="info-box warn"><span class="ib-icon">⚠️</span><div><p><strong>Check every source:</strong> Who wrote it? Is the author an expert or a trusted organization? When was it published? Why was it written (to inform, to sell, to persuade)? Record the details immediately and use the <a href="#generator" style="color:var(--rose-ink)">Citation Generator</a> below.</p></div></div>
+      </div>
+    </div>
+
+    <div class="proc-step">
+      <div class="proc-num">5</div>
+      <div class="proc-main">
+        <h3>Reach the thesis statement (3 focal points)</h3>
+        <p>As you read, notice which <strong>ideas keep appearing</strong>. Group them into <strong>three focal points</strong>: distinct from each other, parallel in form, and supported by your sources. Then write one sentence that states your aim and names them.</p>
+        <div class="model-block">
+          <div class="mb-label">📌 Model</div>
+          <p><strong>Thesis statement:</strong> The aim of this report is to show the environmental impact of fast fashion in terms of <strong>water pollution</strong>, <strong>textile waste</strong>, and <strong>carbon emissions</strong>.</p>
+        </div>
+        <div class="thesis-map">
+          <div style="background:var(--pastel-green);color:var(--green-ink)"><small>Focal point 1 → II.1</small>Water pollution</div>
+          <div style="background:var(--pastel-rose);color:var(--rose-ink)"><small>Focal point 2 → II.2</small>Textile waste</div>
+          <div style="background:var(--pastel-amber);color:var(--amber-ink)"><small>Focal point 3 → II.3</small>Carbon emissions</div>
+        </div>
+        <div class="info-box tip"><span class="ib-icon">💡</span><div><p>Each focal point becomes <strong>one heading</strong> in the Review of Literature. Your three focal points should explore the <strong>relationship between your two research areas</strong> from Step 1.</p></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════
      LAYOUT OVERVIEW
@@ -1641,6 +1986,116 @@ function loadChecklist(){
   } catch(e){}
 }
 loadChecklist();
+</script>
+
+<script>
+/* ── Research process practice ── */
+const TITLE_OPTS=['📢 Too broad','✅ Balanced','🔬 Too narrow'];
+const QUIZ={
+ title:{label:'Title',items:[
+  {q:'Pollution',opts:TITLE_OPTS,a:0,why:'Too broad: only one general topic, with no second research area, no relationship and no narrowing factors.'},
+  {q:'The Environmental Impact of Fast Fashion',opts:TITLE_OPTS,a:1,why:'Balanced: two research areas (Fashion + Environmental Science), a relationship (impact) and two factors (genre/style + viewpoint). You can find academic and non-academic sources.'},
+  {q:'The Water Use of One Fast Fashion Brand in a Single Factory in 2023',opts:TITLE_OPTS,a:2,why:'Too narrow: one brand, one factory, one year. You are unlikely to find published sources, so it is not researchable.'},
+  {q:'Food and Health',opts:TITLE_OPTS,a:0,why:'Too broad: there are two areas, but no relationship word and no narrowing factors (region, age group, time, aspect…).'},
+  {q:'The Benefits of Bilingual Education for Primary School Children',opts:TITLE_OPTS,a:1,why:'Balanced: Education + Linguistics, relationship = benefits, factors = age group + viewpoint. Plenty of sources exist.'},
+  {q:'The Effect of Pesticide Spraying on the Health of Three Farmers in One Village in 2021',opts:TITLE_OPTS,a:2,why:'Too narrow: three farmers, one village, one year. A report cannot be based on sources about this. Widen it, for example: The Health Risks of Pesticide Use Among Farmers in India.'},
+  {q:'The Economic Impact of Heritage Tourism in Peru',opts:TITLE_OPTS,a:1,why:'Balanced: Tourism + Economics, relationship = impact, factors = genre/style (heritage) + region (Peru).'},
+  {q:'Education and Society',opts:TITLE_OPTS,a:0,why:'Too broad: two huge areas, no relationship and no factors. Students could write a whole book on it.'}
+ ]},
+ yn:{label:'Question',items:[
+  {q:'Does bilingual education help children?',opts:['❌ Yes/No question','✅ Good research question'],a:0,why:'It starts with "Does", so the answer is just yes or no. Rewrite: What are the benefits of bilingual education for primary school children?'},
+  {q:'What are the benefits of bilingual education for primary school children?',opts:['❌ Yes/No question','✅ Good research question'],a:1,why:'It starts with "What" and needs a full answer from your sources.'},
+  {q:'Is heritage tourism good for the economy of Peru?',opts:['❌ Yes/No question','✅ Good research question'],a:0,why:'It starts with "Is". Rewrite: What is the economic impact of heritage tourism in Peru?'},
+  {q:'How does heritage tourism affect the economy of Peru?',opts:['❌ Yes/No question','✅ Good research question'],a:1,why:'It starts with "How", so it asks for an explanation.'},
+  {q:'Can pesticides harm farmers?',opts:['❌ Yes/No question','✅ Good research question'],a:0,why:'It starts with "Can". Rewrite: What are the health risks of pesticide use among farmers in India?'},
+  {q:'To what extent does the gig economy create legal challenges in the European Union?',opts:['❌ Yes/No question','✅ Good research question'],a:1,why:'"To what extent" is a wh- type starter that asks for degree and discussion.'}
+ ]},
+ rq:{label:'Title',items:[
+  {q:'The Environmental Impact of Fast Fashion',opts:['Is fast fashion bad for the environment?','Why do people like clothes?','What is the environmental impact of fast fashion?'],a:2,why:['Yes/no question. It starts with "Is".','Wh- question, but it does not match the title (no fast fashion, no environment).','Correct: it has a wh- word, matches the title, and is researchable.']},
+  {q:'The Benefits of Bilingual Education for Primary School Children',opts:['What is education?','Does bilingual education help children?','What are the benefits of bilingual education for primary school children?'],a:2,why:['Too broad and it does not match the title.','Yes/no question. It starts with "Does".','Correct: wh- word + relationship (benefits) + the narrowing factors.']},
+  {q:'The Health Risks of Pesticide Use Among Farmers in India',opts:['Are pesticides dangerous?','What are the health risks of pesticide use among farmers in India?','How do farmers use pesticides on one farm in Punjab in 2021?'],a:1,why:['Yes/no question. It starts with "Are".','Correct: wh- word + relationship (risks) + the narrowing factors.','Wh- question, but too narrow and about how they use pesticides, not the health risks.']}
+ ]}
+};
+const quizState={};
+function initQuiz(id){quizState[id]={i:0,score:0,done:false};renderQuiz(id);}
+function renderQuiz(id){
+  const cfg=QUIZ[id],st=quizState[id],box=document.getElementById('quiz-'+id);
+  box.innerHTML='';
+  if(st.i>=cfg.items.length){
+    const d=document.createElement('div');d.className='pr-score';
+    const pct=Math.round(st.score/cfg.items.length*100);
+    d.innerHTML='<div class="big">'+st.score+' / '+cfg.items.length+'</div><p>'+(pct===100?'🌟 Excellent! You can spot researchable titles and questions.':pct>=60?'👍 Good work. Review the explanations and try again.':'📚 Read the explanations above and try again.')+'</p>';
+    const b=document.createElement('button');b.className='pr-btn';b.textContent='↺ Try again';b.onclick=()=>initQuiz(id);
+    d.appendChild(b);box.appendChild(d);return;
+  }
+  const it=cfg.items[st.i];
+  const h=document.createElement('div');h.className='pr-head';
+  h.innerHTML='<span>'+cfg.label+' '+(st.i+1)+' of '+cfg.items.length+'</span><span>⭐ Score: '+st.score+'</span>';
+  box.appendChild(h);
+  const q=document.createElement('div');q.className='pr-prompt';q.textContent=it.q;box.appendChild(q);
+  const wrap=document.createElement('div');wrap.className='pr-opts';
+  const fb=document.createElement('div');fb.className='pr-fb';fb.style.display='none';
+  const next=document.createElement('button');next.className='pr-btn';next.style.display='none';
+  next.textContent=(st.i===cfg.items.length-1)?'See my score ➜':'Next ➜';
+  next.onclick=()=>{st.i++;renderQuiz(id);};
+  const btns=[];
+  it.opts.forEach((t,idx)=>{
+    const b=document.createElement('button');b.className='pr-opt';b.textContent=t;
+    b.onclick=()=>{
+      btns.forEach(x=>x.disabled=true);
+      const ok=idx===it.a;
+      if(ok){st.score++;b.classList.add('right');}else{b.classList.add('wrong');btns[it.a].classList.add('right');}
+      const why=Array.isArray(it.why)?it.why[idx]+(ok?'':' The best choice is highlighted in green.'):it.why;
+      fb.className='pr-fb '+(ok?'good':'bad');
+      fb.textContent=(ok?'✅ Correct! ':'❌ Not quite. ')+why;
+      fb.style.display='block';next.style.display='inline-block';
+    };
+    btns.push(b);wrap.appendChild(b);
+  });
+  box.appendChild(wrap);box.appendChild(fb);box.appendChild(next);
+}
+['title','yn','rq'].forEach(initQuiz);
+
+/* ── research question builder ── */
+function buildRQ(){
+  const rel=document.getElementById('rq-rel').value;
+  let topic=document.getElementById('rq-topic').value.trim().replace(/[?.]+$/,'');
+  const out=document.getElementById('rq-out');
+  if(!topic){out.style.display='block';out.textContent='✍️ Type your topic first.';return;}
+  const T={
+    impact:'What is the impact of '+topic+'?',
+    benefits:'What are the benefits of '+topic+'?',
+    risks:'What are the risks of '+topic+'?',
+    challenges:'What are the challenges of '+topic+'?',
+    types:'What are the types of '+topic+'?',
+    ps:'What are the problems of '+topic+', and how can they be solved?'
+  };
+  out.style.display='block';out.textContent='✅ '+T[rel];
+}
+
+/* ── research question checker ── */
+function checkRQ(){
+  const v=document.getElementById('rq-check').value.trim();
+  const out=document.getElementById('rq-check-out');
+  out.style.display='block';
+  if(!v){out.className='pr-fb bad';out.textContent='✍️ Type your research question first.';return;}
+  const low=v.toLowerCase();
+  const yn=['is','are','do','does','did','can','could','will','would','should','has','have','was','were','may','might'];
+  const wh=['what','how','why','which','who','where','when','to what extent','in what ways'];
+  const first=low.split(/\s+/)[0].replace(/[^a-z]/g,'');
+  const isWh=wh.some(w=>low.startsWith(w+' '));
+  const words=v.split(/\s+/).length;
+  const msgs=[];let good=true;
+  if(yn.includes(first)&&!isWh){good=false;msgs.push('❌ It starts with "'+first+'", so it is a yes/no question. Start with What, How, Why, To what extent or In what ways.');}
+  else if(!isWh){good=false;msgs.push('⚠️ Start your question with a wh- word: What, How, Why, To what extent or In what ways.');}
+  else{msgs.push('✅ It starts with a wh- word.');}
+  if(!v.endsWith('?')){good=false;msgs.push('⚠️ End the question with a question mark (?).');}
+  if(words<7){good=false;msgs.push('⚠️ It is very short ('+words+' words). Include both research areas, the relationship and your narrowing factors.');}
+  if(words>25){good=false;msgs.push('⚠️ It is long ('+words+' words). One focused question is better.');}
+  if(good)msgs.push('🌟 Good! Now ask yourself: can I find academic and non-academic sources for it?');
+  out.className='pr-fb '+(good?'good':'bad');
+  out.innerHTML=msgs.map(m=>'<div>'+m.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</div>').join('');
+}
 </script>
 </body>
 </html>
