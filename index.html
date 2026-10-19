@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ENG201 · Research Report Writing Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+/* ── Pastel colour palette ── */
+:root{
+  /* core brand */
+  --navy:    #2c3e6b;
+  --indigo:  #5c6fb1;
+  --violet:  #8b7cc8;
+
+  /* pastel section accents */
+  --pastel-blue:   #dce8f8;   /* intro */
+  --pastel-purple: #e8e4f8;   /* lit */
+  --pastel-amber:  #fdf3dc;   /* disc */
+  --pastel-green:  #ddf4e8;   /* conc */
+  --pastel-rose:   #fce8f0;   /* refs */
+  --pastel-teal:   #d8f4f0;   /* gen */
+  --pastel-mint:   #e2f7f4;   /* checklist */
+
+  /* text on pastels */
+  --blue-ink:    #2a5490;
+  --purple-ink:  #5040a0;
+  --amber-ink:   #7a5200;
+  --green-ink:   #1e6b45;
+  --rose-ink:    #8c1f4f;
+  --teal-ink:    #1a6860;
+
+  /* neutrals */
+  --white:   #ffffff;
+  --off:     #f7f6f2;
+  --gray100: #f0eff5;
+  --gray200: #e4e3ec;
+  --gray400: #b0aec4;
+  --gray600: #5e5d78;
+  --gray800: #2a2940;
+
+  --shadow-sm: 0 2px 10px rgba(44,62,107,.09);
+  --shadow-md: 0 6px 24px rgba(44,62,107,.13);
+  --radius:    18px;
+  --radius-sm: 10px;
+}
+
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+/* ── Base — NO italic, serif only ── */
+body{
+  font-family:'Libre Baskerville',Georgia,'Times New Roman',serif;
+  background:var(--off);
+  color:var(--gray800);
+  line-height:1.78;
+  font-size:15px;
+  font-style:normal;
+}
+em,i{font-style:normal;}          /* kill all italics globally */
+code{font-family:'Libre Baskerville',Georgia,serif;font-style:normal;}
+
+/* ═══════════════════ HERO ═══════════════════ */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--indigo) 55%,var(--violet) 100%);
+  color:var(--white);padding:72px 24px 80px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;
+  background:rgba(255,255,255,.04);top:-200px;right:-150px;}
+.hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;
+  background:rgba(139,124,200,.25);bottom:-120px;left:-80px;}
+
+.hero-badge{
+  display:inline-block;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);
+  color:#b8d8f8;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:6px 18px;border-radius:50px;margin-bottom:20px;position:relative;z-index:1;
+}
+.hero h1{
+  font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.25;
+  margin-bottom:16px;position:relative;z-index:1;
+}
+.hero>p{
+  font-size:.98rem;color:rgba(255,255,255,.8);max-width:560px;
+  margin:0 auto 24px;position:relative;z-index:1;
+}
+.grade-intro{
+  font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:10px;
+  position:relative;z-index:1;
+}
+.grade-pills{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:9px;
+  position:relative;z-index:1;
+}
+.grade-pill{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:50px;padding:6px 16px;font-size:13px;
+}
+.grade-pill strong{color:#fce08a;margin-right:4px;}
+.grade-pill .raw{color:rgba(255,255,255,.38);font-size:11px;margin-left:3px;}
+
+/* ═══════════════════ STICKY NAV ═══════════════════ */
+.sticky-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(14px);
+  border-bottom:2px solid var(--gray200);padding:0 24px;
+}
+.nav-inner{
+  max-width:1020px;margin:0 auto;display:flex;overflow-x:auto;
+  gap:4px;padding:10px 0;scrollbar-width:none;
+}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-btn{
+  white-space:nowrap;padding:7px 15px;border-radius:50px;border:none;
+  background:transparent;color:var(--gray600);
+  font-family:'Libre Baskerville',Georgia,serif;
+  font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;text-decoration:none;
+  display:inline-block;
+}
+.nav-btn:hover,.nav-btn.active{background:var(--pastel-purple);color:var(--purple-ink);}
+
+/* ═══════════════════ PAGE ═══════════════════ */
+.page{max-width:880px;margin:0 auto;padding:48px 24px 80px;}
+
+/* ═══════════════════ SECTION CARDS ═══════════════════ */
+.section-card{
+  background:var(--white);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);margin-bottom:36px;
+  border:1.5px solid var(--gray200);transition:box-shadow .25s;
+  overflow:hidden;
+}
+.section-card:hover{box-shadow:var(--shadow-md);}
+
+.card-header{
+  display:flex;align-items:center;gap:14px;padding:20px 28px;
+  cursor:pointer;user-select:none;
+}
+.card-header .icon{
+  width:46px;height:46px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;
+}
+.card-header h2{flex:1;font-size:1.06rem;font-weight:700;color:var(--navy);}
+.card-header .section-label{
+  font-size:11px;font-weight:700;letter-spacing:1.4px;
+  text-transform:uppercase;padding:4px 10px;border-radius:50px;
+}
+.wc-badge{
+  font-size:11px;font-weight:700;letter-spacing:.4px;
+  padding:4px 10px;border-radius:50px;margin-left:4px;
+  background:var(--pastel-blue);color:var(--blue-ink);border:1px solid #b8d4f0;
+}
+.toggle-arrow{font-size:18px;color:var(--gray400);transition:transform .3s;margin-left:6px;}
+.section-card.open .toggle-arrow{transform:rotate(180deg);}
+
+.card-body{
+  display:none;padding:26px 28px 28px;
+  border-top:1.5px solid var(--gray100);
+}
+.section-card.open .card-body{display:block;}
+
+/* section colour themes */
+.theme-intro .icon{background:var(--pastel-blue);}
+.theme-intro .section-label{background:var(--pastel-blue);color:var(--blue-ink);}
+.theme-lit   .icon{background:var(--pastel-purple);}
+.theme-lit   .section-label{background:var(--pastel-purple);color:var(--purple-ink);}
+.theme-disc  .icon{background:var(--pastel-amber);}
+.theme-disc  .section-label{background:var(--pastel-amber);color:var(--amber-ink);}
+.theme-conc  .icon{background:var(--pastel-green);}
+.theme-conc  .section-label{background:var(--pastel-green);color:var(--green-ink);}
+.theme-ref   .icon{background:var(--pastel-rose);}
+.theme-ref   .section-label{background:var(--pastel-rose);color:var(--rose-ink);}
+.theme-gen   .icon{background:var(--pastel-teal);}
+.theme-gen   .section-label{background:var(--pastel-teal);color:var(--teal-ink);}
+.theme-check .icon{background:var(--pastel-mint);}
+.theme-check .section-label{background:var(--pastel-mint);color:var(--green-ink);}
+
+/* ═══════════════════ LAYOUT PANEL ═══════════════════ */
+.layout-panel{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--indigo) 100%);
+  border-radius:var(--radius);padding:28px;color:var(--white);margin-bottom:36px;
+}
+.layout-panel h3{font-size:1.15rem;margin-bottom:6px;font-weight:700;}
+.layout-panel .sub-note{font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:18px;}
+
+.layout-steps{display:flex;flex-direction:column;}
+.layout-step{display:flex;align-items:flex-start;gap:16px;padding:10px 0;position:relative;}
+.layout-step:not(:last-child)::after{
+  content:'';position:absolute;left:19px;top:42px;
+  width:2px;height:calc(100% - 12px);background:rgba(255,255,255,.14);
+}
+.step-num{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;flex-shrink:0;
+}
+.layout-step h4{font-weight:700;font-size:.93rem;color:var(--white);}
+.layout-step p{font-size:.81rem;color:rgba(255,255,255,.62);margin-top:2px;}
+.layout-step .wc-note{font-size:.75rem;color:#b8d8f8;margin-top:2px;}
+
+/* ═══════════════════ INFO BOXES ═══════════════════ */
+.info-box{
+  border-radius:var(--radius-sm);padding:15px 18px;margin:15px 0;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.info-box .ib-icon{font-size:19px;flex-shrink:0;margin-top:1px;}
+.info-box p,.info-box li{font-size:.87rem;}
+.info-box h4{font-size:.9rem;font-weight:700;margin-bottom:5px;}
+.info-box.note {background:var(--pastel-amber);border-left:4px solid #e8b84b;}
+.info-box.tip  {background:var(--pastel-green); border-left:4px solid #5bbb87;}
+.info-box.warn {background:var(--pastel-rose);  border-left:4px solid #d9618e;}
+.info-box.model{background:var(--pastel-purple);border-left:4px solid var(--violet);}
+.info-box.teal {background:var(--pastel-teal);  border-left:4px solid #4cbfb6;}
+
+/* ═══════════════════ MODEL BLOCKS ═══════════════════ */
+.model-block{
+  background:var(--pastel-purple);border-radius:var(--radius-sm);
+  padding:18px 22px;margin:15px 0;border-left:4px solid var(--violet);
+}
+.model-block .mb-label{
+  font-size:10px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--purple-ink);margin-bottom:8px;
+}
+.model-block p{font-size:.88rem;line-height:1.8;}
+.model-block p+p{margin-top:8px;}
+.model-block strong{color:var(--purple-ink);}
+
+/* ═══════════════════ STEP LIST ═══════════════════ */
+.step-list{display:flex;flex-direction:column;gap:10px;margin:14px 0;}
+.step-item{display:flex;gap:12px;align-items:flex-start;}
+.step-badge{
+  width:28px;height:28px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;flex-shrink:0;
+}
+.step-item p{font-size:.9rem;padding-top:4px;}
+
+/* ═══════════════════ TENSE RULE ═══════════════════ */
+.tense-block{border-radius:14px;overflow:hidden;margin:18px 0;border:2px solid var(--gray200);}
+.tense-header{
+  background:linear-gradient(90deg,var(--indigo),var(--violet));
+  padding:13px 20px;display:flex;align-items:center;gap:10px;
+}
+.tense-header .th-icon{font-size:22px;}
+.tense-header h4{color:var(--white);font-size:.93rem;font-weight:700;}
+.tense-header small{color:rgba(255,255,255,.6);font-size:.77rem;margin-left:4px;}
+.tense-body{background:var(--pastel-purple);padding:16px 20px;}
+.tense-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.tense-card{border-radius:10px;padding:14px 16px;font-size:.84rem;line-height:1.65;}
+.tense-card.do  {background:var(--pastel-green);border:1.5px solid #9be0be;}
+.tense-card.dont{background:var(--pastel-rose); border:1.5px solid #f0b3cc;}
+.tense-card .tc-label{
+  font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+  margin-bottom:8px;display:block;
+}
+.tense-card.do   .tc-label{color:var(--green-ink);}
+.tense-card.dont .tc-label{color:var(--rose-ink);}
+.tense-tip{
+  background:rgba(255,255,255,.55);border-radius:8px;padding:10px 14px;
+  font-size:.82rem;color:var(--purple-ink);border-left:3px solid var(--violet);
+}
+
+/* ═══════════════════ PARAGRAPH ANATOMY ═══════════════════ */
+.para-anatomy{border:1.5px solid var(--gray200);border-radius:12px;overflow:hidden;margin:16px 0;}
+.pa-row{display:flex;align-items:stretch;border-bottom:1px solid var(--gray100);}
+.pa-row:last-child{border-bottom:none;}
+.pa-num{
+  width:46px;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;flex-shrink:0;
+}
+.pa-label{
+  width:170px;padding:12px 14px;font-size:.79rem;
+  font-weight:700;display:flex;align-items:center;flex-shrink:0;
+}
+.pa-desc{padding:12px 14px;font-size:.85rem;line-height:1.65;flex:1;}
+.pa-row.ts .pa-num{background:var(--pastel-blue);}
+.pa-row.ts .pa-label{background:var(--pastel-blue);color:var(--blue-ink);}
+.pa-row.s1 .pa-num{background:var(--pastel-purple);}
+.pa-row.s1 .pa-label{background:var(--pastel-purple);color:var(--purple-ink);}
+.pa-row.s2 .pa-num{background:var(--pastel-amber);}
+.pa-row.s2 .pa-label{background:var(--pastel-amber);color:var(--amber-ink);}
+.pa-row.syn .pa-num{background:var(--pastel-teal);}
+.pa-row.syn .pa-label{background:var(--pastel-teal);color:var(--teal-ink);}
+.pa-row.cs .pa-num{background:var(--pastel-green);}
+.pa-row.cs .pa-label{background:var(--pastel-green);color:var(--green-ink);}
+
+/* ═══════════════════ SYNTHESIS VISUAL ═══════════════════ */
+.synthesis-visual{
+  display:flex;align-items:center;justify-content:center;
+  flex-wrap:wrap;gap:0;margin:20px 0;
+}
+.syn-box{
+  border-radius:12px;padding:13px 17px;text-align:center;
+  font-size:.82rem;font-weight:700;min-width:120px;
+}
+.syn-box p{font-size:.77rem;font-weight:400;margin-top:4px;}
+.syn-box.src1  {background:var(--pastel-blue);  color:var(--blue-ink);  border:2px solid #b8d4f0;}
+.syn-box.src2  {background:var(--pastel-purple);color:var(--purple-ink);border:2px solid #c8bef0;}
+.syn-box.you   {background:var(--pastel-amber); color:var(--amber-ink); border:2px solid #f0d890;}
+.syn-box.result{background:var(--pastel-green); color:var(--green-ink); border:2px solid #90dab4;}
+.syn-arrow{font-size:22px;color:var(--gray400);padding:0 6px;}
+
+.syn-process{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;margin:16px 0;
+}
+.syn-step{background:var(--off);border:1px solid var(--gray200);border-radius:10px;padding:12px 14px;}
+.syn-step .ss-num{
+  width:24px;height:24px;border-radius:6px;background:var(--indigo);color:var(--white);
+  font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:7px;
+}
+.syn-step p{font-size:.79rem;color:var(--gray600);}
+
+/* ═══════════════════ REPORTING VERBS FLASHCARDS ═══════════════════ */
+.fc-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+.fc-tab{
+  padding:6px 15px;border-radius:50px;border:2px solid var(--gray200);
+  background:var(--white);color:var(--gray600);font-size:12px;font-weight:700;
+  cursor:pointer;transition:all .2s;
+  font-family:'Libre Baskerville',Georgia,serif;
+}
+.fc-tab.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.fc-tab:hover:not(.active){border-color:var(--violet);color:var(--purple-ink);}
+
+.fc-panel{display:none;}
+.fc-panel.active{display:block;}
+
+.fc-card{border-radius:14px;overflow:hidden;border:1.5px solid var(--gray200);margin-bottom:14px;}
+.fc-card-top{padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.fc-function{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;display:block;}
+.fc-meaning{font-size:.87rem;color:var(--gray600);margin-bottom:10px;}
+.fc-verbs{display:flex;flex-wrap:wrap;gap:6px;}
+.fc-verb{
+  display:inline-block;border-radius:6px;padding:4px 11px;
+  font-size:.81rem;font-weight:700;border:1.5px solid transparent;
+}
+.fc-verb.neutral{background:var(--gray100);color:var(--gray800);border-color:var(--gray200);}
+.fc-verb.strong {background:var(--pastel-amber);color:var(--amber-ink);border-color:#f0d890;}
+.fc-card-bottom{background:var(--off);border-top:1px solid var(--gray100);padding:12px 20px;}
+.fc-example-label{
+  font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--gray600);margin-bottom:5px;
+}
+.fc-example{font-size:.85rem;color:var(--navy);line-height:1.65;}
+.fc-example strong{color:var(--purple-ink);}
+
+/* ═══════════════════ PATTERNS BOX ═══════════════════ */
+.patterns-box{background:var(--navy);border-radius:12px;padding:20px 24px;margin-top:14px;}
+.patterns-box h4{color:var(--white);font-size:.9rem;margin-bottom:14px;}
+.pattern-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;}
+.pattern-row:last-child{margin-bottom:0;}
+.pat-label{
+  background:rgba(255,255,255,.13);color:#b8d8f8;
+  border-radius:6px;padding:4px 10px;font-size:.77rem;
+  font-weight:700;white-space:nowrap;flex-shrink:0;
+}
+.pat-content{color:rgba(255,255,255,.82);font-size:.84rem;line-height:1.65;}
+.pat-examples{margin-top:5px;}
+.pat-ex{
+  display:inline-block;background:rgba(255,255,255,.08);
+  border-radius:4px;padding:2px 8px;font-size:.77rem;
+  color:rgba(255,255,255,.62);margin:2px 4px 2px 0;
+}
+.pat-key{color:#fce08a;font-weight:700;}
+
+/* ═══════════════════ DISCUSSION ═══════════════════ */
+.disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0;}
+.disc-card{border-radius:12px;padding:17px;border:1.5px solid transparent;}
+.disc-card h4{font-size:.89rem;font-weight:700;margin-bottom:8px;}
+.disc-card ul{padding-left:16px;font-size:.82rem;}
+.disc-card li{margin-bottom:5px;}
+.disc-card.results{background:var(--pastel-green);border-color:#90dab4;}
+.disc-card.results h4{color:var(--green-ink);}
+.disc-card.limits {background:var(--pastel-amber);border-color:#f0d890;}
+.disc-card.limits  h4{color:var(--amber-ink);}
+.disc-card.recs   {background:var(--pastel-purple);border-color:#c8bef0;}
+.disc-card.recs    h4{color:var(--purple-ink);}
+
+/* ═══════════════════ CONCLUSION ═══════════════════ */
+.conc-steps{display:flex;flex-direction:column;gap:12px;margin:16px 0;}
+.conc-step{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--off);border-radius:10px;
+  padding:13px 16px;border:1px solid var(--gray200);
+}
+.conc-step .cs-num{
+  width:32px;height:32px;border-radius:50%;
+  background:linear-gradient(135deg,#4cbfb6,#6ab8d8);
+  color:var(--white);display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;flex-shrink:0;
+}
+.conc-step p{font-size:.9rem;padding-top:5px;}
+
+.phrase-pills{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0;}
+.phrase-pill{
+  border-radius:50px;padding:5px 14px;font-size:.81rem;
+  border:1.5px solid #9be0be;background:var(--pastel-green);color:var(--green-ink);
+}
+
+/* ═══════════════════ APA EXAMPLES ═══════════════════ */
+.apa-example{
+  background:var(--off);border:1.5px solid var(--gray200);
+  border-radius:var(--radius-sm);padding:13px 17px;margin:10px 0;
+  font-size:.87rem;line-height:1.82;
+}
+.apa-example .apa-type{
+  font-size:10px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--rose-ink);margin-bottom:6px;
+}
+
+/* ═══════════════════ CITATION GENERATOR ═══════════════════ */
+.gen-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px;}
+.gen-tab{
+  padding:8px 17px;border-radius:50px;border:2px solid var(--gray200);
+  background:var(--white);color:var(--gray600);
+  font-family:'Libre Baskerville',Georgia,serif;
+  font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;
+}
+.gen-tab.active{background:var(--indigo);border-color:var(--indigo);color:var(--white);}
+.gen-tab:hover:not(.active){border-color:var(--violet);color:var(--purple-ink);}
+
+.gen-form{display:none;}
+.gen-form.active{display:block;}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr;}}
+.form-group{display:flex;flex-direction:column;gap:5px;}
+.form-group label{
+  font-size:12px;font-weight:700;color:var(--gray600);
+  text-transform:uppercase;letter-spacing:.6px;
+}
+.form-group input,.form-group select{
+  border:1.5px solid var(--gray200);border-radius:8px;
+  padding:9px 12px;font-size:14px;
+  font-family:'Libre Baskerville',Georgia,serif;
+  color:var(--gray800);transition:border-color .2s;background:var(--white);
+}
+.form-group input:focus,.form-group select:focus{
+  outline:none;border-color:var(--violet);
+  box-shadow:0 0 0 3px rgba(139,124,200,.12);
+}
+.form-group small{font-size:11px;color:var(--gray600);}
+.authors-list{display:flex;flex-direction:column;gap:8px;}
+.author-row{display:flex;gap:8px;align-items:center;}
+.author-row input{flex:1;}
+.btn-remove-author{
+  background:var(--pastel-rose);color:var(--rose-ink);border:none;
+  border-radius:6px;width:32px;height:32px;cursor:pointer;
+  font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.btn-remove-author:hover{background:#f0b3cc;}
+.btn-add-author{
+  background:var(--pastel-purple);color:var(--purple-ink);
+  border:2px dashed var(--violet);border-radius:8px;
+  padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer;
+  transition:all .2s;margin-top:4px;
+  font-family:'Libre Baskerville',Georgia,serif;
+}
+.btn-add-author:hover{background:#d4c8f0;}
+.btn-generate{
+  background:linear-gradient(135deg,var(--indigo),var(--violet));
+  color:var(--white);border:none;border-radius:10px;
+  padding:12px 28px;font-size:15px;font-weight:700;cursor:pointer;
+  transition:opacity .2s,transform .2s;width:100%;margin-top:4px;
+  font-family:'Libre Baskerville',Georgia,serif;
+}
+.btn-generate:hover{opacity:.9;transform:translateY(-1px);}
+.btn-generate:active{transform:translateY(0);}
+
+.citation-result{
+  display:none;margin-top:20px;background:var(--off);
+  border:1.5px solid var(--gray200);border-radius:12px;padding:20px 22px;
+}
+.citation-result.show{display:block;}
+.cr-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.cr-header span{
+  font-size:11px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--purple-ink);
+}
+.btn-copy{
+  background:var(--indigo);color:var(--white);border:none;
+  border-radius:6px;padding:6px 14px;font-size:13px;font-weight:700;
+  cursor:pointer;transition:all .2s;display:flex;gap:6px;align-items:center;
+  font-family:'Libre Baskerville',Georgia,serif;
+}
+.btn-copy:hover{background:var(--navy);}
+.btn-copy.copied{background:#5bbb87;}
+#citation-output{font-size:.91rem;line-height:1.9;color:var(--gray800);}
+#citation-output .apa-hanging{padding-left:2em;text-indent:-2em;}
+.intext-result{
+  margin-top:14px;background:var(--pastel-teal);border-radius:8px;
+  padding:12px 16px;font-size:.87rem;border:1px solid #9be0d8;
+}
+.intext-result strong{color:var(--teal-ink);}
+
+/* ═══════════════════ CHECKLIST ═══════════════════ */
+.check-group{margin-bottom:22px;}
+.check-group h4{
+  font-size:.84rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:1px;color:var(--gray600);margin-bottom:10px;
+  padding-bottom:8px;border-bottom:1.5px solid var(--gray100);
+}
+.check-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:10px 0;border-bottom:1px solid var(--gray100);
+}
+.check-item:last-child{border-bottom:none;}
+.check-item input[type="checkbox"]{
+  width:20px;height:20px;border-radius:5px;
+  accent-color:var(--indigo);cursor:pointer;flex-shrink:0;margin-top:2px;
+}
+.check-item label{font-size:.89rem;cursor:pointer;line-height:1.58;}
+.check-item.done label{text-decoration:line-through;color:var(--gray400);}
+.progress-wrap{
+  background:var(--gray100);border-radius:50px;height:10px;
+  margin-bottom:20px;overflow:hidden;
+}
+.progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,#4cbfb6,var(--violet));
+  border-radius:50px;transition:width .4s ease;width:0%;
+}
+.progress-label{font-size:.81rem;color:var(--gray600);margin-bottom:8px;text-align:right;}
+.btn-reset-checklist{
+  background:var(--pastel-rose);color:var(--rose-ink);border:none;border-radius:8px;
+  padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer;
+  font-family:'Libre Baskerville',Georgia,serif;
+}
+.btn-reset-checklist:hover{background:#f0b3cc;}
+
+/* ═══════════════════ HELPERS ═══════════════════ */
+h3{font-size:1rem;font-weight:700;color:var(--navy);margin:18px 0 10px;}
+h3:first-child{margin-top:0;}
+p{margin-bottom:10px;font-size:.91rem;}
+ul{padding-left:20px;margin-bottom:10px;}
+ul li{font-size:.89rem;margin-bottom:6px;}
+strong{font-weight:700;}
+hr{border:none;border-top:1px solid var(--gray100);margin:20px 0;}
+footer{
+  text-align:center;padding:28px;font-size:.79rem;color:var(--gray600);
+  border-top:1px solid var(--gray200);background:var(--white);
+}
+
+/* anchor-offset so sticky nav doesn't cover headings */
+.anchor-target{
+  display:block;
+  position:relative;
+  top:-80px;
+  visibility:hidden;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     HERO
+═══════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-badge">ENG201 · English for Research Writing</div>
+  <h1>Research Report<br>Writing Guide</h1>
+  <p>Everything you need to plan, write, and polish your final research report — from introduction to reference list.</p>
+  <p class="grade-intro">Total: 100 marks · Each criterion is worth its listed share of the full grade</p>
+  <div class="grade-pills">
+    <span class="grade-pill"><strong>10</strong> Introduction <span class="raw">/100</span></span>
+    <span class="grade-pill"><strong>20</strong> Organization <span class="raw">/100</span></span>
+    <span class="grade-pill"><strong>20</strong> Quality of Info <span class="raw">/100</span></span>
+    <span class="grade-pill"><strong>20</strong> Discussion &amp; Reflection <span class="raw">/100</span></span>
+    <span class="grade-pill"><strong>10</strong> Conclusion <span class="raw">/100</span></span>
+    <span class="grade-pill"><strong>10</strong> Grammar &amp; Spelling <span class="raw">/100</span></span>
+    <span class="grade-pill"><strong>10</strong> Bibliography <span class="raw">/100</span></span>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════
+     STICKY NAV
+═══════════════════════════════════ -->
+<nav class="sticky-nav" aria-label="Section navigation">
+  <div class="nav-inner">
+    <a class="nav-btn active" href="#layout">📋 Layout</a>
+    <a class="nav-btn" href="#intro">I. Introduction</a>
+    <a class="nav-btn" href="#lit">II. Literature Review</a>
+    <a class="nav-btn" href="#para-structure">— Para Structure</a>
+    <a class="nav-btn" href="#synthesis">— Synthesis</a>
+    <a class="nav-btn" href="#tense-rule">— Tense Rule</a>
+    <a class="nav-btn" href="#reporting-verbs">— Reporting Verbs</a>
+    <a class="nav-btn" href="#disc">III. Discussion</a>
+    <a class="nav-btn" href="#conc">IV. Conclusion</a>
+    <a class="nav-btn" href="#refs">References (APA 7)</a>
+    <a class="nav-btn" href="#generator">🔖 Citation Generator</a>
+    <a class="nav-btn" href="#checklist">✅ Checklist</a>
+  </div>
+</nav>
+
+<main class="page">
+
+<!-- ═══════════════════════════════════
+     LAYOUT OVERVIEW
+═══════════════════════════════════ -->
+<span id="layout" class="anchor-target"></span>
+<div class="layout-panel">
+  <h3>📋 Final Paper Layout &amp; Word Count Guide</h3>
+  <p class="sub-note">Target total: approximately 2,000 words. Suggested ranges below are guides, not strict limits.</p>
+  <div class="layout-steps">
+    <div class="layout-step">
+      <div class="step-num" style="background:#6ab8d8;color:#fff">0</div>
+      <div>
+        <h4>Cover Page</h4>
+        <p>Title, your name, course, instructor, date</p>
+        <p class="wc-note">Not counted in the word total</p>
+      </div>
+    </div>
+    <div class="layout-step">
+      <div class="step-num" style="background:#8aa8d8;color:#fff">I</div>
+      <div>
+        <h4>Introduction</h4>
+        <p>General statement · Background · Research Question · Thesis (3 focal points)</p>
+        <p class="wc-note">~200–250 words</p>
+      </div>
+    </div>
+    <div class="layout-step">
+      <div class="step-num" style="background:#8b7cc8;color:#fff">II</div>
+      <div>
+        <h4>Review of Literature</h4>
+        <p>II.1 Heading One · II.2 Heading Two · II.3 Heading Three</p>
+        <p class="wc-note">~1,000–1,100 words total (~330–370 words per heading)</p>
+      </div>
+    </div>
+    <div class="layout-step">
+      <div class="step-num" style="background:#c8a85c;color:#fff">III</div>
+      <div>
+        <h4>Discussion</h4>
+        <p>III.1 Results · III.2 Limitations · III.3 Recommendations</p>
+        <p class="wc-note">~400–450 words (~130–150 words per sub-section)</p>
+      </div>
+    </div>
+    <div class="layout-step">
+      <div class="step-num" style="background:#5bbb87;color:#fff">IV</div>
+      <div>
+        <h4>Conclusion</h4>
+        <p>Restate aim · summarize findings · call for further research</p>
+        <p class="wc-note">~150–200 words</p>
+      </div>
+    </div>
+    <div class="layout-step">
+      <div class="step-num" style="background:#c870a0;color:#fff">R</div>
+      <div>
+        <h4>Reference List</h4>
+        <p>APA 7th edition · alphabetical · hanging indent</p>
+        <p class="wc-note">Not counted in the word total</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     I. INTRODUCTION
+═══════════════════════════════════ -->
+<span id="intro" class="anchor-target"></span>
+<div class="section-card theme-intro open">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div class="icon">✍️</div>
+    <h2>I. Introduction</h2>
+    <span class="section-label">10 marks</span>
+    <span class="wc-badge">~200–250 words</span>
+    <span class="toggle-arrow">▾</span>
+  </div>
+  <div class="card-body">
+
+    <h3>Building Your Introduction</h3>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-badge" style="background:var(--pastel-blue);color:var(--blue-ink)">1</div>
+        <p><strong>General statement</strong> — Open with a broad, true statement that shows why the topic matters to the world.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-badge" style="background:var(--pastel-blue);color:var(--blue-ink)">2</div>
+        <p><strong>Background information</strong> — Give the reader the context they need: key terms, history, or the scale of the issue. Be extensive here.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-badge" style="background:var(--pastel-blue);color:var(--blue-ink)">3</div>
+        <p><strong>Research question</strong> — One clear, focused question your entire report answers.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-badge" style="background:var(--pastel-blue);color:var(--blue-ink)">4</div>
+        <p><strong>Thesis statement</strong> — One sentence that states your aim and names your three focal points. These three points become your literature review headings.</p>
+      </div>
+    </div>
+
+    <div class="model-block">
+      <div class="mb-label">📌 Model</div>
+      <p><strong>Research question:</strong> What are the benefits of introducing electric vehicles to large cities?</p>
+      <p><strong>Thesis statement:</strong> The aim of this report is to show the benefits of electric vehicles in large cities in terms of <strong>carbon emissions</strong>, <strong>air quality and health</strong>, and <strong>financial savings</strong>.</p>
+    </div>
+
+    <div class="info-box tip">
+      <span class="ib-icon">💡</span>
+      <div><p>The three focal points in your thesis <strong>become the three headings</strong> in Section II. Every heading must match exactly one focal point.</p></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     II. LITERATURE REVIEW
+═══════════════════════════════════ -->
+<span id="lit" class="anchor-target"></span>
+<div class="section-card theme-lit open">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div class="icon">📚</div>
+    <h2>II. Review of Literature</h2>
+    <span class="section-label">20 marks</span>
+    <span class="wc-badge">~1,000–1,100 words</span>
+    <span class="toggle-arrow">▾</span>
+  </div>
+  <div class="card-body">
+
+    <!-- BODY PARAGRAPH STRUCTURE -->
+    <span id="para-structure" class="anchor-target"></span>
+    <h3>Body Paragraph Structure</h3>
+    <p>Each heading needs at least one body paragraph that brings <strong>two or more sources together</strong>. Every paragraph follows this five-part anatomy:</p>
+
+    <div class="para-anatomy">
+      <div class="pa-row ts">
+        <div class="pa-num">1</div>
+        <div class="pa-label">Topic Sentence</div>
+        <div class="pa-desc">States the focal point of this paragraph. <strong>Do not</strong> write "This paragraph discusses…" — state your point directly.</div>
+      </div>
+      <div class="pa-row s1">
+        <div class="pa-num">2</div>
+        <div class="pa-label">Source 1</div>
+        <div class="pa-desc">Present evidence from your first source using a <strong>reporting verb</strong> and an APA in-text citation. Paraphrase or summarize — do not copy.</div>
+      </div>
+      <div class="pa-row s2">
+        <div class="pa-num">3</div>
+        <div class="pa-label">Source 2</div>
+        <div class="pa-desc">Connect to Source 1 with a <strong>transition word</strong> (Moreover, Similarly, However…) and add the second source's evidence.</div>
+      </div>
+      <div class="pa-row syn">
+        <div class="pa-num">4</div>
+        <div class="pa-label">Synthesis Sentence</div>
+        <div class="pa-desc">Write 1–2 sentences that combine both sources around your own point. Show what they mean <strong>together</strong> — not just what each one says separately. This is the moment you connect the dots for the reader.</div>
+      </div>
+      <div class="pa-row cs">
+        <div class="pa-num">5</div>
+        <div class="pa-label">Concluding Sentence</div>
+        <div class="pa-desc">Close the idea and link it back to the thesis. Do not introduce new information here.</div>
+      </div>
+    </div>
+
+    <!-- SYNTHESIS -->
+    <span id="synthesis" class="anchor-target"></span>
+    <h3>What Does Synthesizing Sources Mean?</h3>
+
+    <div class="info-box teal">
+      <span class="ib-icon">🧩</span>
+      <div>
+        <h4>The Simple Idea</h4>
+        <p>Think of your sources like puzzle pieces. Each one says something useful on its own, but <strong>you</strong> are the one who puts them together and explains what the full picture looks like. That "putting together" is synthesis.</p>
+        <p style="margin-top:6px">It is <strong>not</strong> just reporting what Source A says, then what Source B says. It is showing how they <strong>connect, agree, disagree, or build on each other</strong> — and what that means for your argument.</p>
+      </div>
+    </div>
+
+    <div class="synthesis-visual">
+      <div class="syn-box src1">Source 1<p>Its key idea</p></div>
+      <div class="syn-arrow">+</div>
+      <div class="syn-box src2">Source 2<p>Its key idea</p></div>
+      <div class="syn-arrow">+</div>
+      <div class="syn-box you">Your Point<p>Why it matters</p></div>
+      <div class="syn-arrow">→</div>
+      <div class="syn-box result">Synthesis<p>One unified paragraph</p></div>
+    </div>
+    <p style="font-size:.84rem;color:var(--gray600);text-align:center;margin-bottom:16px;">Synthesis = Sources + Your thinking, woven together in one paragraph</p>
+
+    <p><strong>How to write the synthesis sentence (Step 4):</strong></p>
+    <ul>
+      <li>Ask yourself: "What do both sources tell me together that neither one says alone?"</li>
+      <li>Use connection phrases like: <strong>Both studies suggest that…</strong> / <strong>While X focuses on…, Y extends this by…</strong> / <strong>Together, these findings indicate…</strong></li>
+      <li>Keep it short — 1 to 2 sentences. Then write your concluding sentence.</li>
+    </ul>
+
+    <div class="model-block">
+      <div class="mb-label">📌 Full Paragraph Model — Music and Mental Health</div>
+      <p><strong>[1 — Topic sentence]</strong> Music has the ability to help people turn sadness into positive thoughts.</p>
+      <p><strong>[2 — Source 1]</strong> Cherry (2019) explains that music helps people manage pain, reduce stress, and improve mood. Cherry (2019) also asserts that music therapy is a safe, low-risk way to reduce anxiety and depression in patients with neurological disorders.</p>
+      <p><strong>[3 — Source 2]</strong> Moreover, Welch et al. (2020) report that adults in their eighties with mild to moderate dementia who join a music and movement programme show better verbal fluency and attention.</p>
+      <p><strong>[4 — Synthesis]</strong> Together, these findings indicate that music's positive effect on the mind extends across different age groups and conditions — from everyday stress to clinical dementia.</p>
+      <p><strong>[5 — Concluding sentence]</strong> Therefore, music clearly supports mental health, especially for patients who struggle with sadness.</p>
+    </div>
+
+    <!-- TENSE RULE -->
+    <span id="tense-rule" class="anchor-target"></span>
+    <h3>Tense Rule</h3>
+    <div class="tense-block">
+      <div class="tense-header">
+        <span class="th-icon">⏱️</span>
+        <h4>Which tense do I use when reporting evidence?</h4>
+        <small>— A quick guide</small>
+      </div>
+      <div class="tense-body">
+        <div class="tense-row">
+          <div class="tense-card do">
+            <span class="tc-label">✅ Use these</span>
+            <p><strong>Present simple</strong></p>
+            <p>Cherry (2019) <strong>explains</strong> that…</p>
+            <p style="margin-top:10px"><strong>Present perfect</strong></p>
+            <p>Researchers <strong>have found</strong> that…</p>
+          </div>
+          <div class="tense-card dont">
+            <span class="tc-label">❌ Avoid this</span>
+            <p><strong>Past simple</strong></p>
+            <p>Cherry (2019) <strong>explained</strong> that…</p>
+            <p style="margin-top:10px;font-size:.8rem;color:var(--rose-ink);">Even if the study was published years ago, treat the authors' ideas as still true — so keep it present tense.</p>
+          </div>
+        </div>
+        <div class="tense-tip">
+          💡 <strong>Why?</strong> Academic writing treats published findings as ongoing knowledge, not past events. Smith's 2005 article still <strong>argues</strong>, <strong>shows</strong>, and <strong>suggests</strong> — it did not stop when it was published.
+        </div>
+      </div>
+    </div>
+
+    <!-- REPORTING VERBS -->
+    <span id="reporting-verbs" class="anchor-target"></span>
+    <h3>Reporting Verbs</h3>
+    <p>Instead of always writing "Smith says…", choose a verb that matches what the author is actually doing. Select a function below to see the verbs and examples.</p>
+
+    <div class="fc-tabs">
+      <button class="fc-tab active"  onclick="switchFC('presenting', this)">Presenting</button>
+      <button class="fc-tab"         onclick="switchFC('agreeing',   this)">Agreeing</button>
+      <button class="fc-tab"         onclick="switchFC('arguing',    this)">Arguing</button>
+      <button class="fc-tab"         onclick="switchFC('suggesting', this)">Suggesting</button>
+      <button class="fc-tab"         onclick="switchFC('concluding', this)">Concluding</button>
+      <button class="fc-tab"         onclick="switchFC('evaluating', this)">Evaluating</button>
+      <button class="fc-tab"         onclick="switchFC('disagreeing',this)">Disagreeing</button>
+      <button class="fc-tab"         onclick="switchFC('emphasising',this)">Emphasising</button>
+    </div>
+
+    <!-- PRESENTING -->
+    <div id="fc-presenting" class="fc-panel active">
+      <div class="fc-card">
+        <div class="fc-card-top" style="background:var(--pastel-blue);">
+          <div>
+            <span class="fc-function" style="color:var(--blue-ink);">Presenting</span>
+            <p class="fc-meaning">Use these when the author is simply sharing or explaining information — no strong opinion involved.</p>
+            <div class="fc-verbs">
+              <span class="fc-verb neutral">describes</span><span class="fc-verb neutral">notes</span><span class="fc-verb neutral">mentions</span>
+              <span class="fc-verb neutral">outlines</span><span class="fc-verb neutral">presents</span><span class="fc-verb neutral">reports</span>
+              <span class="fc-verb neutral">shows</span><span class="fc-verb neutral">states</span><span class="fc-verb neutral">explains</span>
+              <span class="fc-verb strong">reveals</span><span class="fc-verb strong">illustrates</span><span class="fc-verb strong">points out</span>
+            </div>
+          </div>
+        </div>
+        <div class="fc-card-bottom">
+          <div class="fc-example-label">Example sentences</div>
+          <p class="fc-example">Smith (2021) <strong>describes</strong> the effects of screen time on sleep patterns in teenagers.</p>
+          <p class="fc-example" style="margin-top:6px">The study <strong>reveals</strong> a significant gap between rural and urban health outcomes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGREEING -->
+    <div id="fc-agreeing" class="fc-panel">
+      <div class="fc-card">
+        <div class="fc-card-top" style="background:var(--pastel-green);">
+          <div>
+            <span class="fc-function" style="color:var(--green-ink);">Agreeing</span>
+            <p class="fc-meaning">Use when the author supports, confirms, or aligns with another idea or finding.</p>
+            <div class="fc-verbs">
+              <span class="fc-verb neutral">accepts</span><span class="fc-verb neutral">acknowledges</span><span class="fc-verb neutral">agrees</span>
+              <span class="fc-verb neutral">confirms</span><span class="fc-verb neutral">recognises</span>
+              <span class="fc-verb strong">supports</span><span class="fc-verb strong">praises</span>
+            </div>
+          </div>
+        </div>
+        <div class="fc-card-bottom">
+          <div class="fc-example-label">Example sentences</div>
+          <p class="fc-example">Lee (2020) <strong>confirms</strong> that regular exercise reduces symptoms of anxiety.</p>
+          <p class="fc-example" style="margin-top:6px">Welch et al. (2020) <strong>support</strong> this view, arguing that movement-based activities improve cognitive function.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUING -->
+    <div id="fc-arguing" class="fc-panel">
+      <div class="fc-card">
+        <div class="fc-card-top" style="background:var(--pastel-purple);">
+          <div>
+            <span class="fc-function" style="color:var(--purple-ink);">Arguing</span>
+            <p class="fc-meaning">Use when the author is making a strong or debated claim — more forceful than just presenting information.</p>
+            <div class="fc-verbs">
+              <span class="fc-verb neutral">claims</span><span class="fc-verb neutral">believes</span><span class="fc-verb neutral">thinks</span>
+              <span class="fc-verb neutral">maintains</span><span class="fc-verb neutral">holds</span>
+              <span class="fc-verb strong">argues</span><span class="fc-verb strong">contends</span><span class="fc-verb strong">insists</span>
+              <span class="fc-verb strong">emphasises</span><span class="fc-verb strong">proves</span><span class="fc-verb strong">warns</span>
+            </div>
+          </div>
+        </div>
+        <div class="fc-card-bottom">
+          <div class="fc-example-label">Example sentences</div>
+          <p class="fc-example">Hassan (2019) <strong>argues</strong> that the current policy fails to protect low-income communities.</p>
+          <p class="fc-example" style="margin-top:6px">The report <strong>warns</strong> that without immediate action, air quality will worsen significantly by 2030.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUGGESTING -->
+    <div id="fc-suggesting" class="fc-panel">
+      <div class="fc-card">
+        <div class="fc-card-top" style="background:var(--pastel-amber);">
+          <div>
+            <span class="fc-function" style="color:var(--amber-ink);">Suggesting</span>
+            <p class="fc-meaning">Use when the author is putting forward an idea or possibility — but not stating it as definite fact.</p>
+            <div class="fc-verbs">
+              <span class="fc-verb neutral">suggests</span><span class="fc-verb neutral">proposes</span><span class="fc-verb neutral">speculates</span>
+              <span class="fc-verb strong">recommends</span><span class="fc-verb strong">urges</span><span class="fc-verb strong">advocates</span>
+            </div>
+          </div>
+        </div>
+        <div class="fc-card-bottom">
+          <div class="fc-example-label">Example sentences</div>
+          <p class="fc-example">Brown (2022) <strong>suggests</strong> that online learning may be more effective for self-paced students.</p>
+          <p class="fc-example" style="margin-top:6px">The WHO <strong>recommends</strong> a minimum of 150 minutes of physical activity per week for adults.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUDING -->
+    <div id="fc-concluding" class="fc-panel">
+      <div class="fc-card">
+        <div class="fc-card-top" style="background:var(--pastel-green);">
+          <div>
+            <span class="fc-function" style="color:var(--green-ink);">Concluding</span>
+            <p class="fc-meaning">Use when the author reaches a final result or overall finding after their investigation.</p>
+            <div class="fc-verbs">
+              <span class="fc-verb neutral">concludes</span><span class="fc-verb neutral">finds</span><span class="fc-verb neutral">infers</span>
+              <span class="fc-verb strong">discovers</span>
+            </div>
+          </div>
+        </div>
+        <div class="fc-card-bottom">
+          <div class="fc-example-label">Example sentences</div>
+          <p class="fc-example">The study <strong>concludes</strong> that both diet and exercise play an equal role in managing diabetes.</p>
+          <p class="fc-example" style="margin-top:6px">Park et al. (2021) <strong>find</strong> that students who use digital tools show improved writing accuracy.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVALUATING -->
+    <div id="fc-evaluating" class="fc-panel">
+      <div class="fc-card">
+        <div class="fc-card-top" style="background:var(--pastel-blue);">
+          <div>
+            <span class="fc-function" style="color:var(--blue-ink);">Evaluating</span>
+            <p class="fc-meaning">Use when the author examines, measures, or critically assesses something — not just describes it.</p>
+            <div class="fc-verbs">
+              <span class="fc-verb neutral">analyses</span><span class="fc-verb neutral">compares</span><span class="fc-verb neutral">considers</span>
+              <span class="fc-verb neutral">examines</span><span class="fc-verb neutral">investigates</span>
+              <span class="fc-verb strong">critiques</span><span class="fc-verb strong">scrutinises</span>
+            </div>
+          </div>
+        </div>
+        <div class="fc-card-bottom">
+          <div class="fc-example-label">Example sentences</div>
+          <p class="fc-example">Rivera (2020) <strong>examines</strong> the long-term effects of social media on self-esteem among teenagers.</p>
+          <p class="fc-example" style="margin-top:6px">Chen (2018) <strong>critiques</strong> the methodology used in earlier studies for ignoring socioeconomic factors.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISAGREEING -->
+    <div id="fc-disagreeing" class="fc-panel">
+      <div class="fc-card">
+        <div class="fc-card-top" style="background:var(--pastel-rose);">
+          <div>
+            <span class="fc-function" style="color:var(--rose-ink);">Disagreeing</span>
+            <p class="fc-meaning">Use when an author challenges, questions, or directly opposes another idea or finding.</p>
+            <div class="fc-verbs">
+              <span class="fc-verb neutral">questions</span><span class="fc-verb neutral">doubts</span><span class="fc-verb neutral">challenges</span>
+              <span class="fc-verb neutral">debates</span>
+              <span class="fc-verb strong">refutes</span><span class="fc-verb strong">rejects</span><span class="fc-verb strong">disputes</span>
+              <span class="fc-verb strong">contradicts</span><span class="fc-verb strong">criticises</span>
+            </div>
+          </div>
+        </div>
+        <div class="fc-card-bottom">
+          <div class="fc-example-label">Example sentences</div>
+          <p class="fc-example">Nguyen (2023) <strong>challenges</strong> the assumption that remote work increases productivity for all employees.</p>
+          <p class="fc-example" style="margin-top:6px">Malik (2021) <strong>refutes</strong> earlier claims, showing that dietary fat alone does not cause heart disease.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPHASISING -->
+    <div id="fc-emphasising" class="fc-panel">
+      <div class="fc-card">
+        <div class="fc-card-top" style="background:var(--pastel-amber);">
+          <div>
+            <span class="fc-function" style="color:var(--amber-ink);">Emphasising</span>
+            <p class="fc-meaning">Use when the author draws special attention to a point — stressing its importance above other findings.</p>
+            <div class="fc-verbs">
+              <span class="fc-verb neutral">highlights</span><span class="fc-verb neutral">stresses</span>
+              <span class="fc-verb strong">underscores</span><span class="fc-verb strong">accentuates</span>
+            </div>
+          </div>
+        </div>
+        <div class="fc-card-bottom">
+          <div class="fc-example-label">Example sentences</div>
+          <p class="fc-example">The report <strong>highlights</strong> the urgent need for investment in renewable energy infrastructure.</p>
+          <p class="fc-example" style="margin-top:6px">Adams (2019) <strong>underscores</strong> the fact that early childhood nutrition has lifelong consequences.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PATTERNS -->
+    <div class="patterns-box">
+      <h4>🔧 Grammar Patterns — How Reporting Verbs Connect to the Rest of the Sentence</h4>
+      <div class="pattern-row">
+        <span class="pat-label">+ that</span>
+        <div class="pat-content">
+          The verb is followed directly by a that-clause (subject + verb).
+          <div class="pat-examples">
+            <span class="pat-ex">argues <span class="pat-key">that</span> the policy is flawed</span>
+            <span class="pat-ex">claims <span class="pat-key">that</span> results are inconclusive</span>
+            <span class="pat-ex">suggests <span class="pat-key">that</span> more research is needed</span>
+            <span class="pat-ex">finds <span class="pat-key">that</span> outcomes improve</span>
+          </div>
+        </div>
+      </div>
+      <div class="pattern-row">
+        <span class="pat-label">+ noun</span>
+        <div class="pat-content">
+          The verb is followed by a noun phrase — no "that".
+          <div class="pat-examples">
+            <span class="pat-ex">examines <span class="pat-key">the effects of</span> social media</span>
+            <span class="pat-ex">investigates <span class="pat-key">the causes of</span> air pollution</span>
+            <span class="pat-ex">discusses <span class="pat-key">the limitations of</span> the study</span>
+          </div>
+        </div>
+      </div>
+      <div class="pattern-row">
+        <span class="pat-label">+ preposition</span>
+        <div class="pat-content">
+          Some verbs need a specific preposition — learn these as fixed phrases.
+          <div class="pat-examples">
+            <span class="pat-ex">defines X <span class="pat-key">as</span> Y</span>
+            <span class="pat-ex">compares X <span class="pat-key">to</span> Y</span>
+            <span class="pat-ex">contrasts X <span class="pat-key">with</span> Y</span>
+            <span class="pat-ex">disagrees <span class="pat-key">with</span> X</span>
+            <span class="pat-ex">blames X <span class="pat-key">for</span> Y</span>
+            <span class="pat-ex">criticises X <span class="pat-key">for</span> Y</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box warn" style="margin-top:16px">
+      <span class="ib-icon">⚠️</span>
+      <div><p><strong>Before using a strong verb like warns, refutes, or proves</strong> — check it in a learner's dictionary first. These words carry strong meaning and can sound wrong if they do not match what the author actually does.</p></div>
+    </div>
+
+  </div><!-- end card-body -->
+</div><!-- end lit section-card -->
+
+<!-- ═══════════════════════════════════
+     III. DISCUSSION
+═══════════════════════════════════ -->
+<span id="disc" class="anchor-target"></span>
+<div class="section-card theme-disc open">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div class="icon">🔍</div>
+    <h2>III. Discussion</h2>
+    <span class="section-label">20 marks</span>
+    <span class="wc-badge">~400–450 words</span>
+    <span class="toggle-arrow">▾</span>
+  </div>
+  <div class="card-body">
+
+    <p>The discussion interprets the studies you reviewed. Use <strong>only</strong> information you have already reported — no new sources here.</p>
+
+    <div class="disc-grid">
+      <div class="disc-card results">
+        <h4>III.1 Results (Inferences)</h4>
+        <p style="font-size:.82rem;margin-bottom:10px">Show what the sources mean together: patterns, causes, and consequences no single source states directly.</p>
+        <ul>
+          <li>The results indicate that…</li>
+          <li>The studies demonstrate a link between…</li>
+          <li>The analysis confirms…</li>
+          <li>The data suggest that…</li>
+        </ul>
+      </div>
+      <div class="disc-card limits">
+        <h4>III.2 Limitations</h4>
+        <p style="font-size:.82rem;margin-bottom:10px">Describe what your reviewed sources cannot tell us — a region, group, or aspect not covered.</p>
+        <ul>
+          <li>The generalizability of the results is limited by…</li>
+          <li>Due to the lack of available data, the studies cannot confirm…</li>
+          <li>It is beyond the scope of the reviewed studies to…</li>
+        </ul>
+      </div>
+      <div class="disc-card recs">
+        <h4>III.3 Recommendations</h4>
+        <p style="font-size:.82rem;margin-bottom:10px">Recommendations come directly from limitations. Use action verbs.</p>
+        <ul>
+          <li>Further research is needed to establish…</li>
+          <li>Future studies should take into account…</li>
+          <li>It is recommended to…</li>
+          <li>It is suggested to solve this issue by…</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-box warn">
+      <span class="ib-icon">🚫</span>
+      <div><p><strong>Leave out:</strong> new information not reviewed in Section II, recycled ideas (repetition), and inflated claims your sources do not support.</p></div>
+    </div>
+
+    <h3>Student Model</h3>
+    <div class="model-block">
+      <div class="mb-label">📌 EV Example</div>
+      <p><strong>[3.1 Inferences]</strong> The studies reviewed in this paper have all indicated that a large number of electric vehicles in large cities will generally improve residents' quality of life through lower carbon emissions, better air quality and health standards, and some financial benefits.</p>
+      <p><strong>[3.2 Limitations]</strong> The models in the studies, however, cannot represent these effects in regions where electric vehicles are not readily available. For example, Malmgren (2016) focuses on fuel savings, but the calculations use an idealized model, not the real effects of switching. Moreover, Malmgren (2016) does not consider the average income of buyers or the cost of maintaining batteries. In addition, Heidrich et al. (2017) do not expand on electric vehicles in public transport.</p>
+      <p><strong>[3.3 Recommendations]</strong> Therefore, further research is needed to determine the real-world effect of electric vehicles in regions where the market is still emerging. Also, more research is required on maintenance costs compared with gasoline cars. Finally, the potential of electric vehicles for public use needs to be thoroughly researched.</p>
+    </div>
+    <div class="info-box tip">
+      <span class="ib-icon">✅</span>
+      <div><p>Notice how <strong>each limitation leads to exactly one recommendation</strong>. Match them up before you write.</p></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     IV. CONCLUSION
+═══════════════════════════════════ -->
+<span id="conc" class="anchor-target"></span>
+<div class="section-card theme-conc open">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div class="icon">🏁</div>
+    <h2>IV. Conclusion</h2>
+    <span class="section-label">10 marks</span>
+    <span class="wc-badge">~150–200 words</span>
+    <span class="toggle-arrow">▾</span>
+  </div>
+  <div class="card-body">
+
+    <div class="conc-steps">
+      <div class="conc-step"><div class="cs-num">1</div><p><strong>Restate the purpose or aim</strong> of the study.</p></div>
+      <div class="conc-step"><div class="cs-num">2</div><p><strong>Summarize the main ideas</strong> of the literature review — one sentence per focal point.</p></div>
+      <div class="conc-step"><div class="cs-num">3</div><p><strong>Point to further research</strong> on this topic.</p></div>
+      <div class="conc-step"><div class="cs-num">4</div><p><strong>Finish with a final thought</strong> or a call for action.</p></div>
+    </div>
+
+    <div class="info-box warn">
+      <span class="ib-icon">🚫</span>
+      <div><p>Do not add new sources or new information in the conclusion.</p></div>
+    </div>
+
+    <h3>Starter Phrases</h3>
+    <div class="phrase-pills">
+      <span class="phrase-pill">The aim of this report has been to…</span>
+      <span class="phrase-pill">In summary, the reviewed studies show that…</span>
+      <span class="phrase-pill">Overall, the evidence suggests that…</span>
+      <span class="phrase-pill">It is therefore recommended that…</span>
+      <span class="phrase-pill">Further research is needed in order to…</span>
+      <span class="phrase-pill">In the future, researchers should…</span>
+      <span class="phrase-pill">This report has demonstrated that…</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     REFERENCE LIST
+═══════════════════════════════════ -->
+<span id="refs" class="anchor-target"></span>
+<div class="section-card theme-ref open">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div class="icon">📎</div>
+    <h2>Reference List (APA 7)</h2>
+    <span class="section-label">10 marks</span>
+    <span class="toggle-arrow">▾</span>
+  </div>
+  <div class="card-body">
+
+    <h3>In-Text Citation Rules</h3>
+    <div class="info-box model">
+      <span class="ib-icon">📖</span>
+      <div>
+        <p><strong>1–2 authors:</strong> Cherry (2019) explains… / (Cherry, 2019) / Smith and Fry (2020) argue…</p>
+        <p style="margin-top:6px"><strong>3+ authors:</strong> Welch et al. (2020) agree… — use et al. from the first citation.</p>
+        <p style="margin-top:6px"><strong>Organization:</strong> Makati Medical Center (2019) explains…</p>
+        <p style="margin-top:6px"><strong>Direct quote:</strong> add page number — (Hanks, 2004, p. 257)</p>
+      </div>
+    </div>
+
+    <h3>Reference List Formats</h3>
+    <p>Order alphabetically by first author's surname. Use a <strong>hanging indent</strong>.</p>
+
+    <div class="apa-example">
+      <div class="apa-type">Journal Article</div>
+      Author, A. A., &amp; Author, B. B. (Year). Title of article in sentence case. Journal Name, volume(issue), pages. https://doi.org/xxxx
+    </div>
+    <div class="apa-example">
+      <div class="apa-type">Book</div>
+      Author, A. A. (Year). Title of book in sentence case. Publisher.
+    </div>
+    <div class="apa-example">
+      <div class="apa-type">Web Page / Non-Academic Article</div>
+      Author or Organization. (Year, Month Day). Title of page. Site Name. URL
+    </div>
+    <div class="apa-example">
+      <div class="apa-type">YouTube Video</div>
+      Channel Name. (Year, Month Day). Title of video [Video]. YouTube. URL
+    </div>
+
+    <div class="info-box tip">
+      <span class="ib-icon">🔁</span>
+      <div><p><strong>Golden rule:</strong> Every source cited in the text must appear in the reference list, and every reference must be cited in the text.</p></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CITATION GENERATOR
+═══════════════════════════════════ -->
+<span id="generator" class="anchor-target"></span>
+<div class="section-card theme-gen open">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div class="icon">🔖</div>
+    <h2>APA 7 Citation Generator</h2>
+    <span class="section-label">Generator</span>
+    <span class="toggle-arrow">▾</span>
+  </div>
+  <div class="card-body">
+
+    <p>Fill in the fields for your source type and click <strong>Generate Citation</strong>. The tool outputs both the full reference entry and the in-text citation.</p>
+
+    <div class="gen-tabs">
+      <button class="gen-tab active" onclick="switchGenTab('journal', this)">📄 Journal Article</button>
+      <button class="gen-tab"        onclick="switchGenTab('book',    this)">📗 Book</button>
+      <button class="gen-tab"        onclick="switchGenTab('chapter', this)">📘 Book Chapter</button>
+      <button class="gen-tab"        onclick="switchGenTab('webpage', this)">🌐 Web Page</button>
+      <button class="gen-tab"        onclick="switchGenTab('news',    this)">📰 News Article</button>
+      <button class="gen-tab"        onclick="switchGenTab('youtube', this)">▶️ YouTube</button>
+      <button class="gen-tab"        onclick="switchGenTab('report',  this)">📊 Report / Gov Doc</button>
+    </div>
+
+    <!-- JOURNAL -->
+    <div id="gen-journal" class="gen-form active">
+      <div id="authors-journal" class="authors-list">
+        <div class="author-row">
+          <input type="text" placeholder="Last name, F." class="author-input"/>
+          <button class="btn-remove-author" onclick="removeAuthor(this)">×</button>
+        </div>
+      </div>
+      <button class="btn-add-author" onclick="addAuthor('authors-journal')">+ Add author</button>
+      <div class="form-grid" style="margin-top:14px">
+        <div class="form-group"><label>Year</label><input id="j-year" type="text" placeholder="e.g. 2022" maxlength="4"/></div>
+        <div class="form-group"><label>Article Title</label><input id="j-title" type="text" placeholder="Full article title"/></div>
+        <div class="form-group"><label>Journal Name</label><input id="j-journal" type="text" placeholder="e.g. Nature"/></div>
+        <div class="form-group"><label>Volume</label><input id="j-volume" type="text" placeholder="e.g. 14"/></div>
+        <div class="form-group"><label>Issue</label><input id="j-issue" type="text" placeholder="e.g. 3"/></div>
+        <div class="form-group"><label>Pages</label><input id="j-pages" type="text" placeholder="e.g. 45–62"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>DOI or URL</label><input id="j-doi" type="text" placeholder="https://doi.org/..."/></div>
+      </div>
+      <button class="btn-generate" onclick="generateCitation('journal')">🔖 Generate Citation</button>
+    </div>
+
+    <!-- BOOK -->
+    <div id="gen-book" class="gen-form">
+      <div id="authors-book" class="authors-list">
+        <div class="author-row">
+          <input type="text" placeholder="Last name, F." class="author-input"/>
+          <button class="btn-remove-author" onclick="removeAuthor(this)">×</button>
+        </div>
+      </div>
+      <button class="btn-add-author" onclick="addAuthor('authors-book')">+ Add author</button>
+      <div class="form-grid" style="margin-top:14px">
+        <div class="form-group"><label>Year</label><input id="b-year" type="text" placeholder="e.g. 2021" maxlength="4"/></div>
+        <div class="form-group"><label>Book Title</label><input id="b-title" type="text" placeholder="Full book title"/></div>
+        <div class="form-group"><label>Edition</label><input id="b-edition" type="text" placeholder="e.g. 3rd ed. (blank = 1st)"/></div>
+        <div class="form-group"><label>Publisher</label><input id="b-publisher" type="text" placeholder="e.g. Pearson"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>DOI or URL (optional)</label><input id="b-doi" type="text" placeholder="https://..."/></div>
+      </div>
+      <button class="btn-generate" onclick="generateCitation('book')">🔖 Generate Citation</button>
+    </div>
+
+    <!-- CHAPTER -->
+    <div id="gen-chapter" class="gen-form">
+      <p style="font-size:.84rem;color:var(--gray600);margin-bottom:12px;">Use this for a chapter in an edited book.</p>
+      <div id="authors-chapter" class="authors-list">
+        <div class="author-row">
+          <input type="text" placeholder="Chapter author: Last, F." class="author-input"/>
+          <button class="btn-remove-author" onclick="removeAuthor(this)">×</button>
+        </div>
+      </div>
+      <button class="btn-add-author" onclick="addAuthor('authors-chapter')">+ Add chapter author</button>
+      <div class="form-grid" style="margin-top:14px">
+        <div class="form-group"><label>Year</label><input id="ch-year" type="text" placeholder="e.g. 2020" maxlength="4"/></div>
+        <div class="form-group"><label>Chapter Title</label><input id="ch-title" type="text" placeholder="Title of the chapter"/></div>
+        <div class="form-group"><label>Editor(s)</label><input id="ch-editors" type="text" placeholder="A. Editor &amp; B. Editor"/></div>
+        <div class="form-group"><label>Book Title</label><input id="ch-book" type="text" placeholder="Title of the book"/></div>
+        <div class="form-group"><label>Pages of Chapter</label><input id="ch-pages" type="text" placeholder="e.g. 45–62"/></div>
+        <div class="form-group"><label>Publisher</label><input id="ch-publisher" type="text" placeholder="e.g. Routledge"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>DOI or URL (optional)</label><input id="ch-doi" type="text" placeholder="https://..."/></div>
+      </div>
+      <button class="btn-generate" onclick="generateCitation('chapter')">🔖 Generate Citation</button>
+    </div>
+
+    <!-- WEBPAGE -->
+    <div id="gen-webpage" class="gen-form">
+      <div class="form-grid">
+        <div class="form-group" style="grid-column:span 2">
+          <label>Author(s) or Organization</label>
+          <input id="w-author" type="text" placeholder="e.g. World Health Organization  OR  Smith, J."/>
+          <small>If no individual author, the site or organization name goes here.</small>
+        </div>
+        <div class="form-group"><label>Year</label><input id="w-year" type="text" placeholder="e.g. 2023" maxlength="4"/></div>
+        <div class="form-group"><label>Month and Day (optional)</label><input id="w-date" type="text" placeholder="e.g. March 15"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>Page / Article Title</label><input id="w-title" type="text" placeholder="Title of the page or article"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>Website Name</label><input id="w-site" type="text" placeholder="e.g. WHO"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>URL</label><input id="w-url" type="text" placeholder="https://..."/></div>
+      </div>
+      <button class="btn-generate" onclick="generateCitation('webpage')">🔖 Generate Citation</button>
+    </div>
+
+    <!-- NEWS -->
+    <div id="gen-news" class="gen-form">
+      <div class="form-grid">
+        <div class="form-group" style="grid-column:span 2"><label>Author</label><input id="n-author" type="text" placeholder="Last, F.  (or leave blank if no byline)"/></div>
+        <div class="form-group"><label>Year</label><input id="n-year" type="text" placeholder="e.g. 2024" maxlength="4"/></div>
+        <div class="form-group"><label>Month and Day</label><input id="n-date" type="text" placeholder="e.g. January 8"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>Article Title</label><input id="n-title" type="text" placeholder="Title of the news article"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>Publication Name</label><input id="n-pub" type="text" placeholder="e.g. The Guardian"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>URL</label><input id="n-url" type="text" placeholder="https://..."/></div>
+      </div>
+      <button class="btn-generate" onclick="generateCitation('news')">🔖 Generate Citation</button>
+    </div>
+
+    <!-- YOUTUBE -->
+    <div id="gen-youtube" class="gen-form">
+      <div class="form-grid">
+        <div class="form-group" style="grid-column:span 2"><label>Channel Name</label><input id="yt-channel" type="text" placeholder="e.g. TED"/></div>
+        <div class="form-group"><label>Year</label><input id="yt-year" type="text" placeholder="e.g. 2021" maxlength="4"/></div>
+        <div class="form-group"><label>Month and Day</label><input id="yt-date" type="text" placeholder="e.g. April 3"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>Video Title</label><input id="yt-title" type="text" placeholder="Title of the video"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>URL</label><input id="yt-url" type="text" placeholder="https://www.youtube.com/watch?v=..."/></div>
+      </div>
+      <button class="btn-generate" onclick="generateCitation('youtube')">🔖 Generate Citation</button>
+    </div>
+
+    <!-- REPORT -->
+    <div id="gen-report" class="gen-form">
+      <div class="form-grid">
+        <div class="form-group" style="grid-column:span 2"><label>Author(s) or Organization</label><input id="r-author" type="text" placeholder="e.g. United Nations  OR  Smith, A. B."/></div>
+        <div class="form-group"><label>Year</label><input id="r-year" type="text" placeholder="e.g. 2022" maxlength="4"/></div>
+        <div class="form-group"><label>Report Title</label><input id="r-title" type="text" placeholder="Full title of the report"/></div>
+        <div class="form-group"><label>Report Number (optional)</label><input id="r-number" type="text" placeholder="e.g. Report No. 12"/></div>
+        <div class="form-group"><label>Publisher / Issuing Body</label><input id="r-publisher" type="text" placeholder="e.g. World Bank"/></div>
+        <div class="form-group" style="grid-column:span 2"><label>DOI or URL</label><input id="r-url" type="text" placeholder="https://..."/></div>
+      </div>
+      <button class="btn-generate" onclick="generateCitation('report')">🔖 Generate Citation</button>
+    </div>
+
+    <!-- Result -->
+    <div id="citation-result" class="citation-result">
+      <div class="cr-header">
+        <span>Generated Citation</span>
+        <button class="btn-copy" id="btn-copy-ref" onclick="copyCitation()">📋 Copy Reference</button>
+      </div>
+      <div id="citation-output"></div>
+      <div id="intext-result" class="intext-result"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     CHECKLIST
+═══════════════════════════════════ -->
+<span id="checklist" class="anchor-target"></span>
+<div class="section-card theme-check open">
+  <div class="card-header" onclick="toggleCard(this)">
+    <div class="icon">✅</div>
+    <h2>Pre-Submission Checklist</h2>
+    <span class="section-label">Self-review</span>
+    <span class="toggle-arrow">▾</span>
+  </div>
+  <div class="card-body">
+    <p>Tick every item before you hand in your report. Your progress is saved in this browser.</p>
+    <div class="progress-label" id="progress-label">0 / 22 complete</div>
+    <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+
+    <div class="check-group">
+      <h4>📝 Introduction (10 marks)</h4>
+      <div class="check-item" data-id="c1"><input type="checkbox" id="c1" onchange="updateCheck('c1')"/><label for="c1">My introduction opens with a broad, relevant general statement about the topic.</label></div>
+      <div class="check-item" data-id="c2"><input type="checkbox" id="c2" onchange="updateCheck('c2')"/><label for="c2">I have provided extensive background information (key terms, history, scope of the issue).</label></div>
+      <div class="check-item" data-id="c3"><input type="checkbox" id="c3" onchange="updateCheck('c3')"/><label for="c3">I have stated one clear research question.</label></div>
+      <div class="check-item" data-id="c4"><input type="checkbox" id="c4" onchange="updateCheck('c4')"/><label for="c4">My thesis sentence names exactly three focal points that match my literature review headings.</label></div>
+    </div>
+
+    <div class="check-group">
+      <h4>📚 Organization and Literature Review (20 marks)</h4>
+      <div class="check-item" data-id="c5"><input type="checkbox" id="c5" onchange="updateCheck('c5')"/><label for="c5">My report follows the required layout order (Cover → I → II → III → IV → Reference List).</label></div>
+      <div class="check-item" data-id="c6"><input type="checkbox" id="c6" onchange="updateCheck('c6')"/><label for="c6">Each of my three literature review headings matches one focal point of my thesis.</label></div>
+      <div class="check-item" data-id="c7"><input type="checkbox" id="c7" onchange="updateCheck('c7')"/><label for="c7">Each body paragraph begins with an implicit topic sentence (not "This paragraph discusses…").</label></div>
+      <div class="check-item" data-id="c8"><input type="checkbox" id="c8" onchange="updateCheck('c8')"/><label for="c8">Each paragraph synthesizes at least two sources and includes a synthesis sentence before the concluding sentence.</label></div>
+      <div class="check-item" data-id="c9"><input type="checkbox" id="c9" onchange="updateCheck('c9')"/><label for="c9">Each paragraph ends with a concluding sentence that links back to the thesis.</label></div>
+    </div>
+
+    <div class="check-group">
+      <h4>🔬 Quality of Information (20 marks)</h4>
+      <div class="check-item" data-id="c10"><input type="checkbox" id="c10" onchange="updateCheck('c10')"/><label for="c10">All sources I use are reliable and credible.</label></div>
+      <div class="check-item" data-id="c11"><input type="checkbox" id="c11" onchange="updateCheck('c11')"/><label for="c11">I have mostly paraphrased and summarized (not copied) from my sources.</label></div>
+      <div class="check-item" data-id="c12"><input type="checkbox" id="c12" onchange="updateCheck('c12')"/><label for="c12">I used varied, accurate reporting verbs (not just "says").</label></div>
+      <div class="check-item" data-id="c13"><input type="checkbox" id="c13" onchange="updateCheck('c13')"/><label for="c13">All evidence is reported in present simple or present perfect tense.</label></div>
+    </div>
+
+    <div class="check-group">
+      <h4>🔍 Discussion and Critical Reflection (20 marks)</h4>
+      <div class="check-item" data-id="c14"><input type="checkbox" id="c14" onchange="updateCheck('c14')"/><label for="c14">My results section draws inferences across sources — not just summaries of individual studies.</label></div>
+      <div class="check-item" data-id="c15"><input type="checkbox" id="c15" onchange="updateCheck('c15')"/><label for="c15">My limitations describe gaps in the reviewed sources (not my own mistakes).</label></div>
+      <div class="check-item" data-id="c16"><input type="checkbox" id="c16" onchange="updateCheck('c16')"/><label for="c16">Each limitation is matched to a specific recommendation.</label></div>
+      <div class="check-item" data-id="c17"><input type="checkbox" id="c17" onchange="updateCheck('c17')"/><label for="c17">No new sources or new information appear in the Discussion section.</label></div>
+    </div>
+
+    <div class="check-group">
+      <h4>🏁 Conclusion (10 marks)</h4>
+      <div class="check-item" data-id="c18"><input type="checkbox" id="c18" onchange="updateCheck('c18')"/><label for="c18">I have restated the aim of my study.</label></div>
+      <div class="check-item" data-id="c19"><input type="checkbox" id="c19" onchange="updateCheck('c19')"/><label for="c19">I have summarized one key finding per focal point.</label></div>
+      <div class="check-item" data-id="c20"><input type="checkbox" id="c20" onchange="updateCheck('c20')"/><label for="c20">I have called for further research and/or action. No new sources are introduced.</label></div>
+    </div>
+
+    <div class="check-group">
+      <h4>✍️ Grammar, Spelling and Bibliography (20 marks)</h4>
+      <div class="check-item" data-id="c21"><input type="checkbox" id="c21" onchange="updateCheck('c21')"/><label for="c21">I have proofread for grammar and spelling errors throughout.</label></div>
+      <div class="check-item" data-id="c22"><input type="checkbox" id="c22" onchange="updateCheck('c22')"/><label for="c22">Every in-text citation matches a reference list entry (and vice versa), formatted in APA 7.</label></div>
+    </div>
+
+    <button class="btn-reset-checklist" onclick="resetChecklist()">↺ Reset checklist</button>
+  </div>
+</div>
+
+</main>
+
+<footer>ENG201 · English for Research Writing · APA 7th Edition</footer>
+
+<!-- ═══════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════ -->
+<script>
+/* ── highlight active nav link on click ── */
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+/* ── card toggle ── */
+function toggleCard(header){
+  header.closest('.section-card').classList.toggle('open');
+}
+
+/* ── flashcard tabs ── */
+function switchFC(type, btn){
+  document.querySelectorAll('.fc-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.fc-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('fc-' + type).classList.add('active');
+  btn.classList.add('active');
+}
+
+/* ── citation generator source tabs ── */
+function switchGenTab(type, btn){
+  document.querySelectorAll('.gen-form').forEach(f => f.classList.remove('active'));
+  document.querySelectorAll('.gen-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('gen-' + type).classList.add('active');
+  btn.classList.add('active');
+  document.getElementById('citation-result').classList.remove('show');
+}
+
+/* ── author rows ── */
+function addAuthor(listId){
+  const list = document.getElementById(listId);
+  const row  = document.createElement('div');
+  row.className = 'author-row';
+  row.innerHTML = '<input type="text" placeholder="Last name, F." class="author-input"/>'
+                + '<button class="btn-remove-author" onclick="removeAuthor(this)">×</button>';
+  list.appendChild(row);
+}
+function removeAuthor(btn){
+  const list = btn.closest('.authors-list');
+  if(list.querySelectorAll('.author-row').length > 1) btn.parentElement.remove();
+}
+
+/* ── helpers ── */
+function getAuthors(listId){
+  return Array.from(document.querySelectorAll('#'+listId+' .author-input'))
+              .map(i => i.value.trim()).filter(Boolean);
+}
+function fmtAuthors(arr){
+  if(!arr.length) return '';
+  if(arr.length === 1) return arr[0];
+  if(arr.length === 2) return arr[0] + ', & ' + arr[1];
+  return arr.slice(0,-1).join(', ') + ', & ' + arr[arr.length-1];
+}
+function intextParen(arr, year){
+  if(!arr.length) return '(n.d.)';
+  const s = arr.map(a => a.split(',')[0].trim());
+  const n = s.length===1 ? s[0] : s.length===2 ? s[0]+' & '+s[1] : s[0]+' et al.';
+  return '(' + n + ', ' + (year||'n.d.') + ')';
+}
+function intextNarr(arr, year){
+  if(!arr.length) return '';
+  const s = arr.map(a => a.split(',')[0].trim());
+  const n = s.length===1 ? s[0] : s.length===2 ? s[0]+' and '+s[1] : s[0]+' et al.';
+  return n + ' (' + (year||'n.d.') + ')';
+}
+function sentCase(str){ return str ? str.charAt(0).toUpperCase() + str.slice(1) : ''; }
+function v(id){ return (document.getElementById(id)||{}).value || ''; }
+
+/* ── generate citation ── */
+function generateCitation(type){
+  let ref='', intext='', narr='';
+  const yr = id => v(id) || 'n.d.';
+
+  if(type==='journal'){
+    const a=getAuthors('authors-journal'), y=yr('j-year');
+    const t=sentCase(v('j-title')), j=v('j-journal'), vol=v('j-volume'), iss=v('j-issue'), pg=v('j-pages'), doi=v('j-doi');
+    ref = fmtAuthors(a)+(a.length?' ':'')+' ('+y+'). '+t+'. ';
+    ref += j ? j : '';
+    ref += vol ? ', '+vol : '';
+    ref += iss ? '('+iss+')' : '';
+    ref += pg  ? ', '+pg    : '';
+    ref += '. '+(doi||'');
+    intext=intextParen(a,y); narr=intextNarr(a,y);
+  } else if(type==='book'){
+    const a=getAuthors('authors-book'), y=yr('b-year');
+    const t=sentCase(v('b-title')), ed=v('b-edition'), pub=v('b-publisher'), doi=v('b-doi');
+    ref = fmtAuthors(a)+(a.length?' ':'')+' ('+y+'). '+t;
+    ref += ed  ? ' ('+ed+')' : '';
+    ref += '. '+(pub||'');
+    ref += doi ? '. '+doi : '.';
+    intext=intextParen(a,y); narr=intextNarr(a,y);
+  } else if(type==='chapter'){
+    const a=getAuthors('authors-chapter'), y=yr('ch-year');
+    const t=sentCase(v('ch-title')), eds=v('ch-editors'), bk=v('ch-book'), pg=v('ch-pages'), pub=v('ch-publisher'), doi=v('ch-doi');
+    ref = fmtAuthors(a)+(a.length?' ':'')+' ('+y+'). '+t+'. In ';
+    ref += eds ? eds+' (Ed'+(eds.includes('&')?'s':'')+'.), ' : '';
+    ref += bk  ? bk : '';
+    ref += pg  ? ' (pp. '+pg+')' : '';
+    ref += '. '+(pub||'');
+    ref += doi ? '. '+doi : '.';
+    intext=intextParen(a,y); narr=intextNarr(a,y);
+  } else if(type==='webpage'){
+    const raw=v('w-author'), y=yr('w-year'), d=v('w-date');
+    const t=sentCase(v('w-title')), site=v('w-site'), url=v('w-url');
+    const ds = d ? y+', '+d : y;
+    ref = (raw||'')+'. ('+ds+'). '+t+'. ';
+    ref += site ? site+'. ' : '';
+    ref += url||'';
+    intext = raw ? intextParen([raw],y) : '('+y+')';
+    narr   = raw ? intextNarr([raw],y)  : y;
+  } else if(type==='news'){
+    const raw=v('n-author'), y=yr('n-year'), d=v('n-date');
+    const t=sentCase(v('n-title')), pub=v('n-pub'), url=v('n-url');
+    const ds = d ? y+', '+d : y;
+    ref = (raw?raw+'. ':'')+' ('+ds+'). '+t+'. '+(pub||'')+'. '+(url||'');
+    intext = raw ? intextParen([raw],y) : '('+y+')';
+    narr   = raw ? intextNarr([raw],y)  : y;
+  } else if(type==='youtube'){
+    const ch=v('yt-channel'), y=yr('yt-year'), d=v('yt-date');
+    const t=sentCase(v('yt-title')), url=v('yt-url');
+    const ds = d ? y+', '+d : y;
+    ref = (ch||'')+'. ('+ds+'). '+t+' [Video]. YouTube. '+(url||'');
+    intext = '('+(ch||'')+', '+y+')';
+    narr   = (ch||'')+' ('+y+')';
+  } else if(type==='report'){
+    const raw=v('r-author'), y=yr('r-year');
+    const t=sentCase(v('r-title')), num=v('r-number'), pub=v('r-publisher'), url=v('r-url');
+    ref = (raw||'')+'. ('+y+'). '+t;
+    ref += num ? ' ('+num+')' : '';
+    ref += pub ? '. '+pub     : '';
+    ref += url ? '. '+url     : '.';
+    intext = '('+(raw?raw.split(',')[0].trim()+', ':'')+y+')';
+    narr   = (raw?raw.split(',')[0].trim()+' (':'(')+y+')';
+  }
+
+  document.getElementById('citation-output').innerHTML =
+    '<p class="apa-hanging">'+ref.trim()+'</p>';
+  document.getElementById('intext-result').innerHTML =
+    '<strong>In-text (parenthetical):</strong> '+intext+
+    '<br><strong>In-text (narrative):</strong> '+narr+' …';
+  const box = document.getElementById('citation-result');
+  box.classList.add('show');
+  const cb = document.getElementById('btn-copy-ref');
+  cb.textContent = '📋 Copy Reference'; cb.classList.remove('copied');
+  box.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+/* ── copy ── */
+function copyCitation(){
+  navigator.clipboard.writeText(document.getElementById('citation-output').innerText).then(() => {
+    const btn = document.getElementById('btn-copy-ref');
+    btn.textContent = '✔ Copied!'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent='📋 Copy Reference'; btn.classList.remove('copied'); }, 2500);
+  });
+}
+
+/* ── checklist ── */
+const TOTAL = 22;
+function updateCheck(id){
+  const cb = document.getElementById(id);
+  cb.closest('.check-item').classList.toggle('done', cb.checked);
+  saveChecklist(); updateProgress();
+}
+function updateProgress(){
+  const done = document.querySelectorAll('.check-item.done').length;
+  const pct  = Math.round(done / TOTAL * 100);
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = done + ' / ' + TOTAL + ' complete (' + pct + '%)';
+}
+function saveChecklist(){
+  const s = {};
+  for(let i=1;i<=TOTAL;i++){ const c=document.getElementById('c'+i); if(c) s['c'+i]=c.checked; }
+  localStorage.setItem('eng201_checklist', JSON.stringify(s));
+}
+function loadChecklist(){
+  try{
+    const s = JSON.parse(localStorage.getItem('eng201_checklist')||'{}');
+    for(const [id,val] of Object.entries(s)){
+      const cb = document.getElementById(id);
+      if(cb){ cb.checked=val; if(val) cb.closest('.check-item').classList.add('done'); }
+    }
+    updateProgress();
+  } catch(e){}
+}
+loadChecklist();
+</script>
+</body>
+</html>
